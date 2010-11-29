@@ -32,7 +32,66 @@
 \newcommand{\setfunc}[2]{\hbox{${}^{\hbox{$#1$}}\hskip -3 pt #2$}}
 
 \begin{document}
+\section{Research Summary}
 
+\section{Research Description}
+The field of Ramsey Theory can broadly be described as the study of
+large mathematical structures that are preserved under finite
+partitions. 
+The qualitative aspect of Ramsey Theory focuses on finding precisely
+how structures are preserved under finite partitions, and which
+structures can be preserved. 
+On the other hand, the quantitative aspect of Ramsey Theory focuses on
+finding out exactly how ``large'' structures must be to have this
+preservation property. 
+(Similar to most other fields of mathematics, finding out exactly how
+large a structure must be is beyond current mathematical technology. 
+Instead we often settle for finding estimates.)
+
+An early theorem in Ramsey Theory that nicely illustrates these
+qualitative and quantitative aspects is van der Waerden's Theorem.
+
+  \begin{vdw}
+    For all $k$, $l \in \bbN$, there exists a number $W \in \bbN$ such
+    that if $\{1, 2, \ldots, W \} = \bigcup_{i=1}^k C_i$, then there
+    exist $i \in \{1, 2, \ldots, k\}$ and $a, d \in \bbN$ such that
+    \[
+      \{\, a, a+d, \ldots, a+(l-1)d \,\} \subseteq C_i.
+    \]
+  \end{vdw}
+
+In order words, given a sufficiently large initial segment of the
+natural numbers one of the cells of a partition of this segment must
+contain a $l$ term arithmetic progression. 
+Here the structures that are preserved is finite arithmetic
+progressions, while the largeness is indicated by the number $W$.
+
+  \begin{defn}
+    For $k$ and $l \in \bbN$,
+    the number $W(k,l) \in \bbN$ is the \textsl{van der Waerden
+      number} if and only if it is the smallest number such that whenever
+    $\{1, 2, \ldots, W(k,l)\} = \bigcup_{i=1}^k C_i$, then there
+    exist $i \in \{1, 2, \ldots, k\}$ and $a$, $d \in \bbN$ with 
+    \[
+      \{\, a, a+d, \ldots, a+(l-1)d \,\} \subseteq C_i.
+    \]
+  \end{defn}
+
+  \begin{defn}
+    Let $l \in \bbN$. 
+    For $N \in \bbN$ define 
+      \begin{align*}
+        r_l(N) &= \max\bigr\{\, A \subseteq \{1, 2, \ldots, N\} : 
+          \hbox{there does not exist $a$,$b \in \bbN$ such that } \\
+          &\hspace{5em}\hbox{$\{\,a, a+d, \ldots, a+(l-1)d \,\}
+            \subseteq A$} \bigl\}.
+      \end{align*}
+  \end{defn}
+
+  \begin{roth}
+    $r_3(N) = O\bigl(\frac{N}{\log\log N}\bigl)$.
+  \end{roth}
+\section{Broader Impact}
 
 \bibliographystyle{plain}
 \bibliography{references}
