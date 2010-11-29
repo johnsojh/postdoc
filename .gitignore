@@ -1,0 +1,14 @@
+# Ignore the auxiliary files produced by LaTeX
+*.aux
+*.log
+*.synctex.gz
+
+# Ignore the files produced by BiBTeX
+*.bbl
+*.blg
+
+# Ignore final pdf output
+*.pdf
+
+# Ignore file added by Mac OS X
+.DS_Store
