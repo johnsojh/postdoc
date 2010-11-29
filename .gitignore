@@ -2,6 +2,7 @@
 *.aux
 *.log
 *.synctex.gz
+*.out
 
 # Ignore the files produced by BiBTeX
 *.bbl
