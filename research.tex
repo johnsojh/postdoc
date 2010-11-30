@@ -6,6 +6,7 @@
 \documentclass[12pt]{article}
 
 \usepackage{amsthm, amssymb, amsmath}
+% \usepackage[doublespacing]{setspace}
 
 \newtheoremstyle{plain}{3mm}{3mm}{\slshape}{}{\bfseries}{.}{.5em}{}
 \theoremstyle{plain}
@@ -35,20 +36,24 @@
 \section{Research Summary}
 
 \section{Research Description}
+\subsection{Van der Waerden's Theorem}
 The field of Ramsey Theory is broadly described as the study of large
 mathematical structures that are preserved under finite partitions.
-From the qualitative viewpoint, we investigate precisely which
-structures are preserved, and how structures are perserved, under
+From the qualitative viewpoint, Ramsey Theorists investigate precisely which
+structures are preserved, and how they are preserved, under
 finite partitions.
-Quantitatively however, we compute estimates on how ``large'' a
+Quantitatively however, the focus is on computing estimates on how ``large'' a
 certain structure must be to achieve this preservation property. 
-(Computing, except in a few small cases, exactly how large a structure
+(Except in a few small cases, computing exactly how large a structure
 must be is beyond current mathematical technology.)
-% This sentence may be a bit too bold!
-These two synergistic strands is the guiding principle of all research
+These two synergistic strands form the guiding principle for most research
 in Ramsey Theory.
 
-Like most important theorems there are many equivalent ways to state
+Van der Waerden's Theorem is an early result
+\cite{Van-der-Waerden:1927fk} in Ramsey Theory that
+directly illustrates the qualitative and quantitative aspects of the
+field. 
+Like most important theorems, there are many equivalent ways to state
 van der Waerden's Theorem.
 We choose to give a formulation that is not traditional, but it has
 the virtue of making the qualitative and quantitative aspects more
@@ -56,39 +61,40 @@ transparent.
 
   \begin{vdw}
     For all $k$, $l \in \bbN$, there exists a natural number $W \in
-    \bbN$ such that if $A \subseteq \bbN$ is any subset which contains a
-    $W$-term arithmetic progression and $A = \bigcup_{i=1}^k C_i$,
-    then there exist $i \in \{1, 2, \ldots, k\}$ and $a$, $d \in \bbN$
-    such that 
-      \[
-        \{\, a, a+d, \ldots, a+(l-1)d \,\} \subseteq C_i.
-      \]
+    \bbN$ with the following property: 
+      \begin{quote}
+        If $A \subseteq \bbN$ contains a $W$-term arithmetic
+        progression and $A = \bigcup_{i=1}^k C_i$, then there exist $i
+        \in \{1, 2, \ldots, k \}$ and $a$, $d \in \bbN$ such that 
+          \[
+            \{\, a, a + d, \ldots, a +(l-1)d \,\} \subseteq C_i.
+          \]
+      \end{quote}
   \end{vdw}
 
 In order words, given any partition, with at most $k$ cells, of a
-sufficiently long arithmetic progression at least one cell contains a
+sufficiently long arithmetic progression, at least one cell contains a
 $l$-term arithmetic progression.
-For this instance, finite arithmetic progressions is the structure
-that is preserved, and the number $W$ is a measure of how large we
+For this result, finite arithmetic progressions is the structure
+that is preserved; and, the number $W$ is a measure of how large we
 need our structure to be to induce this preservation property.
-Given this natural number $W$, a bit of thought will show that any
-natural number bigger than $W$ is also sufficient to ensure that a
+
+A bit of thought proves that show that any
+natural number bigger than $W$ is sufficient to ensure that a
 $l$-term arithmetic progression is preserved.
-With this observation we can make the following definition.
+Using this small observation and the well-ordering principle for
+natural numbers enables us to make the following (nonvacuous) definition
 
   \begin{defn}
     For $k$, $l \in \bbN$, the number $W(k,l) \in \bbN$ is the
     \textsl{van der Waerden number} if and only if it is the smallest
-    number such that whenever $A \subseteq \bbN$ is a $W(k,l)$-term
+    number such that whenever $A \subseteq \bbN$ contains a $W(k,l)$-term
     arithmetic progression and $A = \bigcup_{i=1}^k C_i$, there exist
     $i \in \{1, 2, \ldots, k\}$ and $a, d \in \bbN$ such that
       \[
         \{\, a, a+d, \ldots, a+(l-1)d \,\} \subseteq C_i.
       \]
   \end{defn}
-
-Van der Waerden's Theorem and the well-ordering principle of the
-natural numbers shows that $W(k,l)$ exists for all $k$, $l \in \bbN$.
 
   \begin{rmk}
     The attentive reader may have already noticed that
@@ -97,26 +103,26 @@ natural numbers shows that $W(k,l)$ exists for all $k$, $l \in \bbN$.
     Of course, a finite partition is not the same thing as a finite
     union; but, as a practical matter it often doesn't affect the
     truth of Ramsey Theoretic results if we conflate the two. 
-    Therefore, we follow the usual convention of writing finite
+    Therefore we follow the usual convention of writing finite
     partitions and finite unions without bothering to make a
     distinction between the two.
   \end{rmk}
 
-  \begin{defn}
-    Let $l \in \bbN$. 
-    For $N \in \bbN$ define 
-      \begin{align*}
-        r_l(N) &= \max\bigr\{\, A \subseteq \{1, 2, \ldots, N\} : 
-          \hbox{there does not exist $a$,$b \in \bbN$ such that } \\
-          &\hspace{5em}\hbox{$\{\,a, a+d, \ldots, a+(l-1)d \,\}
-            \subseteq A$} \bigl\}.
-      \end{align*}
-  \end{defn}
+%   \begin{defn}
+%     Let $l \in \bbN$. 
+%     For $N \in \bbN$ define 
+%       \begin{align*}
+%         r_l(N) &= \max\bigr\{\, A \subseteq \{1, 2, \ldots, N\} : 
+%           \hbox{there does not exist $a$,$b \in \bbN$ such that } \\
+%           &\hspace{5em}\hbox{$\{\,a, a+d, \ldots, a+(l-1)d \,\}
+%             \subseteq A$} \bigl\}.
+%       \end{align*}
+%   \end{defn}
 
-  \begin{roth}
-    $r_3(N) = O\bigl(\frac{N}{\log\log N}\bigl)$.
-  \end{roth}
-\section{Broader Impact}
+%   \begin{roth}
+%     $r_3(N) = O\bigl(\frac{N}{\log\log N}\bigl)$.
+%   \end{roth}
+% \section{Broader Impact}
 
 \bibliographystyle{plain}
 \bibliography{references}
