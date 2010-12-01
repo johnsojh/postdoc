@@ -7,17 +7,66 @@
 \newtheoremstyle{plain}{3mm}{3mm}{\slshape}{}{\bfseries}{.}{.5em}{}
 \theoremstyle{plain}
 \newtheorem{thm}{Theorem}[section]
+\newtheorem{vdw}[thm]{Van der Waerden's Theorem}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\VDW}{\mathcal{VDW}}
 
 
 \begin{document}
 \section{Research Description}
 \subsection{Van der Waerden's Theorem}
-The field of Ramsey Theory is broadly described as the study of large mathematical structures that are, in some sense, preserved under finite partitions.
-From the quantitative viewpoint, Ramsey Theorists investigate estimates on how ``large'' a particular structure must be to induce this preservation property.
-(Except in a few small cases computing exactly how large a particular structure must be is beyond current mathematical technology.)
+The field of Ramsey Theory is broadly described as the study of large
+mathematical structures that are, in some sense, preserved under
+finite partitions.
+From the quantitative viewpoint, Ramsey Theorists investigate
+estimates on how ``large'' a particular structure must be to induce
+this preservation property.
+(Except in a few small cases computing exactly how large a particular
+structure must be is beyond current mathematical technology.)
 Qualitatively however, the focus is on the properties of structures that are preserved, and how these structures are preserved, under finite partitions.
-These two synergistic strands form the guiding principle for most research in Ramsey Theory.
-But, for this research statement we will almost exclusively focus on the qualitative aspects of the field, and hence for us ``large'' will almost always simply mean infinite.
+These two synergistic strands form the guiding principle for most
+research in Ramsey Theory.
+But, for this research statement we will almost exclusively focus on
+the qualitative aspects of the field, and hence for us ``large'' will
+almost always simply mean infinite.
+
+
+Van der Waerden's Theorem is an early\cite{Van-der-Waerden:1927fk}
+result in Ramsey Theory that directly illustrates both these
+quantitative and qualitative aspects.
+Like most important theorems, there are many equivalent ways to state
+van der Waerden's Theorem.
+Since our focus is on qualitative results, we choose to give a
+formulation that emphases the theorem's qualitative character. 
+  \begin{vdw}
+    For every natural number $r$, if\/ $\bbN = \bigcup_{i=1}^r C_i$,
+    then for every natural number $k$ there exist $i \in \{1, 2,
+    \ldots, r\}$ and natural numbers $a$ and $d$ such that $\{\, a,
+    a+d, \ldots, a+(k-1)d\,\} \subseteq C_i$.
+  \end{vdw}
+In other words, if we finitely partition the natural numbers, we can
+find a finite arithmetic progression of any length in at least one
+class of the partition. 
+Van der Waerden's Theorem naturally motivates several
+qualitative questions. 
+To help state our questions we introduce
+the following nonstandard but suggestive notation.
+  \begin{defn}
+    For $A \subseteq \bbN$, let $\VDW(A)$ represent the
+    following statement
+      \begin{quote}
+      For all natural numbers $r$, if $A = \bigcup_{i=1}^r C_i$, then
+      for every natural number $k$ there exist $i \in \{1, 2,
+      \ldots, r\}$ and natural numbers $a$ and $d$ such that $\{\, a,
+      a+d, \ldots, a+(k-1)d\,\} \subseteq C_i$.
+     \end{quote}
+  \end{defn}
+Using this notion we can vaguely ask what are the properties of
+subsets $A \subseteq \bbN$ for which $\VDW(A)$ is true?
 
 \bibliographystyle{plain}
 \bibliography{references}
