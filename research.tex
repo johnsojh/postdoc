@@ -39,46 +39,132 @@
 \subsection{Van der Waerden's Theorem}
 The field of Ramsey Theory is broadly described as the study of large
 mathematical structures that are preserved under finite partitions.
-From the qualitative viewpoint, Ramsey Theorists investigate precisely which
-structures are preserved, and how they are preserved, under
+From the qualitative viewpoint, Ramsey Theorists investigate precisely
+which structures are preserved, and how they are preserved under
 finite partitions.
-Quantitatively however, the focus is on computing estimates on how ``large'' a
-certain structure must be to achieve this preservation property. 
+Quantitatively however, the focus is on computing estimates on how
+``large'' a certain structure must be to achieve this preservation
+property. 
 (Except in a few small cases, computing exactly how large a structure
 must be is beyond current mathematical technology.)
-These two synergistic strands form the guiding principle for most research
-in Ramsey Theory.
+These two synergistic strands form the guiding principle for most
+research in Ramsey Theory.
+For this research statement, we will exclusively focus on the
+qualitative aspects of the field, and for us ``large'' will
+be simply infinite.
 
-Van der Waerden's Theorem is an early result
-\cite{Van-der-Waerden:1927fk} in Ramsey Theory that
-directly illustrates the qualitative and quantitative aspects of the
-field. 
-Like most important theorems, there are many equivalent ways to state
-van der Waerden's Theorem.
-We choose to give a formulation that is not traditional, but it has
-the virtue of making the qualitative and quantitative aspects more
-transparent. 
-
-  \begin{vdw}
-    For all $k$, $l \in \bbN$, there exists a natural number $W \in
-    \bbN$ with the following property: 
+The following is a typical qualitative question.
+  \begin{ques}
+    For which subsets $A \subseteq \bbN$ is the following property
+    true?
       \begin{quote}
-        If $A \subseteq \bbN$ contains a $W$-term arithmetic
-        progression and $A = \bigcup_{i=1}^k C_i$, then there exist $i
-        \in \{1, 2, \ldots, k \}$ and $a$, $d \in \bbN$ such that 
+        For all natural numbers $r$, if $A = \bigcup_{i=1}^r C_i$,
+        then for every natural numbers $k$ there exist $i \in \{1, 2,
+        \ldots, r\}$ and natural numbers $a$ and $d$ such that 
           \[
-            \{\, a, a + d, \ldots, a +(l-1)d \,\} \subseteq C_i.
+            \{\, a, a+d, \ldots, a+(k-1)d \,\} \subseteq C_i.
           \]
       \end{quote}
+  \end{ques}
+Van der Waerden's Theorem is an early result
+\cite{Van-der-Waerden:1927fk} in Ramsey Theory that partially answers
+this question.
+This theorem states that if we partition the natural numbers into finitely many
+classes then we can find a finite arithmetic progression of any length
+in at least one class. 
+More precisely we have the following. 
+  \begin{vdw}
+    For all natural numbers $r$, if $\bbN = \bigcup_{i=1}^r C_i$,
+    then for every natural numbers $k$ there exist $i \in \{1, 2,
+    \ldots, r\}$ and natural numbers $a$ and $d$ such that 
+      \[
+        \{\, a , a+d, \ldots, a+(k-1)d \,\} \subseteq C_i.
+      \]
   \end{vdw}
+It's possible to obtain a more detailed understanding of our question
+by studying $(\bbN, +)$ from an algebraic viewpoint. 
+At first glance, $(\bbN, +)$ has only a paucity of algebraic
+structure. 
+However, we shall soon see that we can embed $(\bbN, +)$ into a rich
+algebraic structure that can shed light on qualitative questions in
+Ramsey Theory. 
 
-In order words, given any partition, with at most $k$ cells, of a
-sufficiently long arithmetic progression, at least one cell contains a
-$l$-term arithmetic progression.
-For this result, finite arithmetic progressions is the structure
-that is preserved; and, the natural number $W$ is a measure of how
-large we need our structure to be to induce this preservation
-property.
+\subsection{Algebraic Preliminaries}
+The algebraic structure that we shall setup is through semigroup
+theory.
+We use the following definitions.
+  \begin{defn}
+    Let $(S, \cdot)$ be a pair such that $S$ is nonempty and $\cdot$ is a
+    binary operation on $S$.
+      \begin{itemize}
+        \item[(a)] $S$ is a \textsl{semigroup} if and only if for all
+          $a$, $b$, and $c \in S$, we have $a \cdot (b \cdot c) = (a
+          \cdot b) \cdot c$.
+        \item[(b)] For all $a \in S$, define the functions $\lambda_a
+          : S \to S$ and $\rho_a : S \to S$ by $\lambda_a(x) = a\cdot
+          x$ and $\rho_a(x) = x\cdot a$, respectively.
+        \item[(c)] Let $\emptyset \ne I \subseteq S$.
+          We say $I$ is a \textsl{left ideal of $S$} if and only if
+          $S\cdot I \subseteq I$.
+          We say $I$ is a \textsl{right ideal of $S$} if and only if
+          $S\cdot I \subseteq I$.
+          We say $I$ is a \textsl{(two-sided) ideal of $S$} if and only if
+          $I$ is both a left ideal and right ideal of $S$.
+      \end{itemize}
+  \end{defn}
+Even looking at $(\bbN, +)$ as a semigroup shows that this set has a
+pretty bare algebraic structure. 
+(For instance infinite segments of $\bbN$ are the only ideals of this
+semigroup.)
+To make $(\bbN, +)$ algebraically more useful we will look at the
+Stone-\v{C}ech compactification $\beta\bbN$ of $\bbN$ and extend the
+usual addition of $\bbN$ to $\beta\bbN$.
+
+  \begin{defn}
+    Let $\mathcal{U} \subseteq \mathcal{P}(\bbN)$.
+    We say $\mathcal{U}$ is an \textsl{ultrafilter on $\bbN$} if and
+    only if it has the following four properties:
+      \begin{itemize}
+        \item[(1)] $\mathcal{U}$ is nonempty.
+        \item[(2)] $\emptyset \not\in \mathcal{U}$. 
+        \item[(3)] If $A \in \mathcal{U}$ and $A \subseteq B \subseteq
+          \bbN$, then $B \in \mathcal{U}$.
+        \item[(4)] For all $A \subseteq \bbN$, then either $A \in
+          \mathcal{U}$ or $\bbN \setminus A \in \mathcal{U}$.
+      \end{itemize}
+  \end{defn}
+
+\subsection{Viewing van der Waerden's Theorem Algebraically}
+\subsection{Van der Waerden's Theorem and Algebraic Structure}
+Like most important theorems, there are many equivalent ways to state
+van der Waerden's Theorem.
+Since we will be interested in the qualitative aspects of Ramsey
+Theory, we choose to give a formulation that emphasizes this viewpoint.
+
+
+In order words, 
+Qualitatively we are interested in the following two questions.
+  \begin{ques}
+    \vspace*{1em}
+    \begin{itemize}
+      \item[(1)] For which subsets $A \subseteq \bbN$ is it true that
+        for all positive integers $r$, if $A = \bigcup_{i=1}^r C_i$,
+        then for every positive integer $k$ there exist $i \in \{1, 2,
+        \ldots, r \}$ and positive integers $a$ and $b$ such that 
+          \[
+            \{\, a, a+d, \ldots, a+(k-1)d \,\} \subseteq C_i?
+          \]
+       \item[(2)] Is there a ``minimal'' subset $A \subseteq \bbN$
+         such that whenever we partition $A$ into finitely many
+         classes we can find a finite arithmetic progression of any
+         length in at least one class?
+    \end{itemize}
+  \end{ques}
+
+It is possible to study both of these questions from the algebraic
+viewpoint. 
+We provide a brief review of this 
+
 
 A bit of thought proves that any
 natural number bigger than $W$ is sufficient to ensure that a
