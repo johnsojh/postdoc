@@ -1,0 +1,13 @@
+Sketch of Research Statement
+
+1. Van der Waerden's Theorem
+   - qualitative and quantitative aspects of Ramsey Theory
+   - focus only on qualitative aspect
+   - vdw
+   - qualitative question motivated by vdw
+   - teaser: it's possible to study these qualitative questions by studying 
+      ultrafilters on N (in fact, it's an easy result that such qualitative questions are 
+      equivalent to studying ultrafilters on N [HS, Theorem 5.7])
+
+2. Ultrafilters on N
+   - 
