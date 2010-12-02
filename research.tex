@@ -8,16 +8,72 @@
 \theoremstyle{plain}
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{vdw}[thm]{Van der Waerden's Theorem}
+\newtheorem{fst}[thm]{Hindman's Theorem}
 
 \theoremstyle{definition}
 \newtheorem{defn}[thm]{Definition}
 
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\VDW}{\mathcal{VDW}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
 
 
 \begin{document}
 \section{Research Description}
+\subsection{Hindman's Theorem}
+Issai Schur proved, in 1916 \cite{Schur:1916fk}, that if the natural
+numbers are divided into finitely many classes, then there exists natural
+numbers $x$ and $y$ such that $x$, $y$, and $x+y$ all lie in one
+class.
+Schur's Theorem was generalized by several people, among them Richard
+Rado \cite{Rado:1933kx} (a student of Schur), Jon Henry Sanders
+\cite{Sanders:1968uq}, and Jon Folkman \cite{Graham:1971vn}.
+This particular generalization states that if the natural numbers are
+divided into finitely many classes, then for every $m \in \bbN$ there
+exists a
+sequence of natural numbers $\la x_n \ra_{n=1}^m$ such that the set
+$\bigl\{\, \sum_{n \in F} x_n : \emptyset \ne F \subseteq \{1, 2, \ldots,
+m\} \,\bigr\}$ is contained in one of the classes.
+
+Neil Hindman proved, in 1974 \cite{Hindman:1974ys} the most general
+version of the Rado-Sanders-Folkman Theorem currently known.
+  \begin{fst}
+    For all natural numbers $r$, if $\bbN = \bigcup_{i=1}^r C_i$, then
+    there exist $i \in \{1, 2, \ldots, r\}$ and a sequence of natural
+    numbers $\la x_n \ra_{n=1}^\infty$ such that
+      \[
+        \Bigl\{\,\sum_{n \in F} x_n : \emptyset \ne F \subseteq \bbN \hbox{
+          is finite} \,\Bigr\} \subseteq C_i.
+      \]
+  \end{fst}
+This theorem is important as a strong generalization of
+the Rado-Sanders-Folkman Theorem, but for us it is also important because
+Hindman's Theorem is equivalent to the existence of objects called
+idempotent ultrafilters on $\bbN$.
+
+\subsection{Idempotent Ultrafilters}
+  \begin{defn}
+    Let $\emptyset \ne p \subseteq \mathcal{P}(\bbN)$.
+    We say that $p$ is an \textsl{ultrafilter on $\bbN$} if and only
+    if it satisfies the following four properties.
+      \begin{itemize}
+        \item[(1)] $\emptyset \not\in p$.
+        \item[(2)] If $A \in p$ and $A \subseteq B \subseteq \bbN$,
+          then $B \in p$.
+        \item[(3)] If $A$, $B \in p$, then $A \cap B \in p$.
+        \item[(4)] For all $A \subseteq \bbN$, either $A \in p$ or
+          $\bbN \setminus A \in p$.
+      \end{itemize}
+  \end{defn}
+
+It's easy to construct (essentially trivial) ultrafilters on $\bbN$.
+For a point $a \in \bbN$ and put $e(a) = \,\{ A \subseteq \bbN : a \in A
+\,\}$.
+Then it is simple exercise to show that $e(a)$ is an ultrafilter on
+$\bbN$ for any $a \in \bbN$.
+We call such ultrafilters \textsl{principal ultrafilters}. 
+
 \subsection{Van der Waerden's Theorem}
 The field of Ramsey Theory is broadly described as the study of large
 mathematical structures that are, in some sense, preserved under
