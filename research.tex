@@ -95,8 +95,8 @@ For all $a \in \bbN$, put $e(a) = \{\, A \subseteq \bbN : a \in A
 Then it is a simple exercise to show that $e(a)$ is an ultrafilter on
 $\bbN$. 
 We call such ultrafilters \textsl{principal ultrafilters}. 
-The existence of nonprincipal ultrafilters follows from an application
-of Zorn's Lemma. 
+The existence of \textsl{nonprincipal ultrafilters} follows from an
+application of Zorn's Lemma. 
 
 We will soon put a topology and algebraic structure on the collection
 of all ultrafilters on $\bbN$. 
@@ -130,15 +130,52 @@ semigroup, and with our identification of $\bbN$ with the principal
 ultrafilters the addition on $\beta\bbN$ is an extension of the usual
 addition on $\bbN$. 
 
-With all of our definitions $(\beta\bbN, +)$ becomes a compact
-Hausdorff right-topological semigroup. 
+We can summarize all of our definitions by saying that $(\beta\bbN,
++)$ becomes a compact Hausdorff right-topological semigroup. 
 (The right-topological semigroup part means that for all $p \in
 \beta\bbN$, the function $q \mapsto q+p$ is continuous.)
 It's a fact due to Robert Ellis that every compact right-topological
 semigroup contains idempotents. 
-It's also a particular fact that $\beta\bbN$ has $2^\mathfrak{c}$ (see
-\cite[Theorem 6.44]{Hindman:1998fk}) idempotents
+It's also a fact particular to $\beta\bbN$ that this space has
+$2^\mathfrak{c}$ (see \cite[Theorem 6.44]{Hindman:1998fk}) idempotents
 where $\mathfrak{c}$ is the cardinality of the continuum. 
+
+The reader may well wonder how all of this elaborate equipment can be
+put to use. 
+As an illustrative example, we indicate how idempotent ultrafilters
+can be used to give an easy proof of Hindman's Theorem. 
+(We won't prove the whole thing however, we'll just show the $m=3$
+case of the Rado-Sanders-Folkman Theorem.)
+
+  \begin{thm}
+    For every natural number $r$, if  \/ $\bbN = \bigcup_{i=1}^r C_i$,
+    then there exist $i \in \{1, 2, \ldots, r\}$ and a finite sequence
+    of natural numbers $\la x_1, x_2, x_3 \ra$ such that $\bigl\{\,
+    \sum_{n\in F} x_n : \emptyset \ne F \subseteq \{1,2,3\} \,\bigr\}$
+  \end{thm}
+
+To finish up with our algebraic preliminaries we need to make one more
+set of definitions.
+  \begin{defn}
+    \begin{itemize}
+      \item[(a)] Given subsets $A$ and $B$ of $\beta\bbN$, we put $A +
+        B = \{\, p+q : \hbox{$p \in A$ and $q \in B$} \,\}$.
+      \item[(b)] A nonempty subset $L \subseteq \beta\bbN$ is called a
+        \textsl{left ideal (of $\beta\bbN$)} if and only if $\beta\bbN
+        + L \subseteq L$.
+      \item[(c)] A nonempty subset $R \subseteq \beta\bbN$ is called a
+        \textsl{right ideal (of $\beta\bbN$)} if and only if $R +
+        \beta\bbN \subseteq R$.
+      \item[(d)] A nonempty subset $I \subseteq \beta\bbN$ is called a
+        \textsl{(two-sided) ideal (of $\beta\bbN$)} if and only if $I$
+        is both a left and right ideal.
+      \item[(e)] We denote the \textsl{smallest (with respect to
+          inclusion) ideal of $\beta\bbN$} by $K(\beta\bbN)$.
+    \end{itemize}
+  \end{defn}
+It is a fact\cite[Theorem 2.8]{Hindman:1998fk} that the smallest ideal
+exists for any compact Haudorff right-topological semigroup. 
+(It's also a fact that every finite semigroup has a smallest ideal.)
 
 \subsection{Van der Waerden's Theorem}
 The field of Ramsey Theory is broadly described as the study of large
