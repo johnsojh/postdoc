@@ -1,14 +1,14 @@
 Sketch of Research Statement
 
 1. Hindman's Theorem
-   - In 1916 Schur proved blah
-   - A generalization of Schur's Theorem was proved by several people:
+   X In 1916 Schur proved blah
+   X A generalization of Schur's Theorem was proved by several people:
    first by Richard Rado, Sanders, and then Folkman, there theorem
    says blah
-   - Hindman proved a far ranging generalization of all of these
+   X Hindman proved a far ranging generalization of all of these
    results
 	# FST
-   - Hindman <--> idempotent ultrafilters
+   X Hindman <--> idempotent ultrafilters
 
 2. Ultafilters and Stone-Cech Compactification
    - def of ultrafilters
