@@ -3,20 +3,50 @@
 \usepackage[margin=1in]{geometry}
 \usepackage[doublespacing]{setspace}
 \usepackage{amsthm, amssymb, amsmath}
+\usepackage[all]{xy}
 
 \newtheoremstyle{plain}{3mm}{3mm}{\slshape}{}{\bfseries}{.}{.5em}{}
 \theoremstyle{plain}
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{vdw}[thm]{Van der Waerden's Theorem}
+\newtheorem{fst}[thm]{Hindman's Theorem}
 
 \theoremstyle{definition}
 \newtheorem{defn}[thm]{Definition}
 
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\VDW}{\mathcal{VDW}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
 
 
 \begin{document}
+
+\subsection{Van der Waerden's Theorem and Hindman's Theorem}
+Van der Waerden's Theorem is one of the early important theorems in
+Ramsey Theory \cite{Van-der-Waerden:1927fk} that asserts that if we
+finitely partition the natural numbers, we can find a finite
+arithmetic progression of any length in at least one class of the
+partition.
+More precisely we have
+  \begin{vdw}
+    For every natural number $r$, if\/ $\bbN = \bigcup_{i=1}^r C_i$,
+    then for every natural number $k$ there exist $i \in \{1, 2,
+    \ldots, r\}$ and natural numbers $a$ and $d$ such that $\{\, a,
+    a+d, \ldots, a+(k-1)d\,\} \subseteq C_i$.
+  \end{vdw}
+Another important theorem in Ramsey Theory that was published
+forty-seventy years after van der Waerden's result is Hindman's
+Theorem.
+  \begin{fst}
+    For every natural number $r$, if\/ $\bbN = \bigcup_{i=1}^r C_i$,
+    then there exist $i \in \{1, 2, \ldots, r\}$ and a sequence $\la x_n
+    \ra_{n=1}^\infty$ of natural numbers such that $\{\, \sum_{n \in
+      F} x_n : \emptyset \ne F \subseteq \bbN \hbox{ is finite} \,\}
+    \subseteq C_i$.
+  \end{fst}
+Hindman's Theorem has a different character then van der Waerden's Theorem.
+
 \section{Research Description}
 \subsection{Van der Waerden's Theorem}
 The field of Ramsey Theory is broadly described as the study of large
@@ -35,7 +65,7 @@ the qualitative aspects of the field, and hence for us ``large'' will
 almost always simply mean infinite.
 
 
-Van der Waerden's Theorem is an early\cite{Van-der-Waerden:1927fk}
+Van der Waerden's Theorem is an early
 result in Ramsey Theory that directly illustrates both these
 quantitative and qualitative aspects.
 Like most important theorems, there are many equivalent ways to state
@@ -43,10 +73,7 @@ van der Waerden's Theorem.
 Since our focus is on qualitative results, we choose to give a
 formulation that emphases the theorem's qualitative character. 
   \begin{vdw}
-    For every natural number $r$, if\/ $\bbN = \bigcup_{i=1}^r C_i$,
-    then for every natural number $k$ there exist $i \in \{1, 2,
-    \ldots, r\}$ and natural numbers $a$ and $d$ such that $\{\, a,
-    a+d, \ldots, a+(k-1)d\,\} \subseteq C_i$.
+    
   \end{vdw}
 In other words, if we finitely partition the natural numbers, we can
 find a finite arithmetic progression of any length in at least one
@@ -56,15 +83,61 @@ qualitative questions.
 To help state our questions we introduce
 the following nonstandard but suggestive notation.
   \begin{defn}
-    For $A \subseteq \bbN$, let $\VDW(A)$ represent the
-    following statement
+    For $A \subseteq \bbN$ and natural numbers $r$ and $k$, let
+    $\VDW(A;r,k)$ represent the following statement
       \begin{quote}
-      For all natural numbers $r$, if $A = \bigcup_{i=1}^r C_i$, then
-      for every natural number $k$ there exist $i \in \{1, 2,
-      \ldots, r\}$ and natural numbers $a$ and $d$ such that $\{\, a,
-      a+d, \ldots, a+(k-1)d\,\} \subseteq C_i$.
+        If $A = \bigcup_{i=1}^r C_i$, then there exist $i \in \{1, 2,
+        \ldots, r\}$ and natural numbers $a$ and $d$ such that $\{\, a,
+        a+d, \ldots, a+(k-1)d\,\} \subseteq C_i$.
      \end{quote}
   \end{defn}
+Using this notation van der Waerden's Theorem asserts that for all
+natural numbers $r$ and $k$ the statement $\VDW(\bbN;r,k)$ is true.
+However, we can be a bit more precise than this!
+A moments thought proves that for $A \subseteq \bbN$ and any natural
+numbers $r$ and $k$ the following table of implications is valid.
+  % Would be nice if I label this table.
+  \begin{quote}
+    \xymatrix{
+      {\VDW(A;r,k)} \ar@{=>}[r]\ar@{=>}[d] & {\VDW(A;r-1,k)}
+        \ar@{=>}[r]\ar@{=>}[d] & \cdots \ar@{=>}[r]\ar@{=>}[d] &
+        {\VDW(A;1,k)} \ar@{=>}[d] \\
+      {\VDW(A;r,k-1)} \ar@{=>}[r]\ar@{=>}[d] & {\VDW(A;r-1,k-1)}
+        \ar@{=>}[r]\ar@{=>}[d] & \cdots \ar@{=>}[r]\ar@{=>}[d] &
+        {\VDW(A;1,k-1)} \ar@{=>}[d] \\
+      \vdots \ar@{=>}[d] & \vdots \ar@{=>}[d] 
+        & \vdots \ar@{=>}[d]  & \vdots \ar@{=>}[d] \\
+      {\VDW(A;r,1)} \ar@{=>}[r]& {\VDW(A;r-1,1)}\ar@{=>}[r] & 
+        \cdots \ar@{=>}[r]& {\VDW(A;1,1)} \\
+    }
+  \end{quote}
+Even though this table was figured out just purely off of the
+definition of $\VDW(A; r,k)$, it does give us a hint at how the van
+der Waerden's Theorem is proved.
+Most proofs of van der Waerden's Theorem comes from the observation
+that it suffices to prove for all natural numbers $r$ and $k$ the
+following table of implications (reversed from what we had before).
+  % Would be nice if I label this table.
+  \begin{quote}
+    \xymatrix{
+      {\VDW(\bbN;r,k)} & {\VDW(\bbN;r-1,k)}
+        \ar@{=>}[l] & \cdots \ar@{=>}[l] &
+        {\VDW(\bbN;1,k)}\ar@{=>}[l]  \\
+      {\VDW(\bbN;r,k-1)} \ar@{=>}[u] & {\VDW(\bbN;r-1,k-1)}
+        \ar@{=>}[l]\ar@{=>}[u] & \cdots \ar@{=>}[l]\ar@{=>}[u] &
+        {\VDW(\bbN;1,k-1)} \ar@{=>}[u]\ar@{=>}[l] \\
+      \vdots \ar@{=>}[u] & \vdots \ar@{=>}[u] 
+        & \vdots \ar@{=>}[u]  & \vdots \ar@{=>}[u] \\
+      {\VDW(\bbN;r,1)} \ar@{=>}[u]& {\VDW(\bbN;r-1,1)}\ar@{=>}[l]
+        \ar@{=>}[u] & 
+        \cdots \ar@{=>}[l]\ar@{=>}[u]& {\VDW(\bbN;1,1)}\ar@{=>}[u]
+        \ar@{=>}[l] \\
+    }
+  \end{quote}
+Typically most proofs of van der Waerden's Theorem follows from
+assuming that one row of the above table is true and proceeds to show
+that the first entry in the next row up is ???
+
 Using this notion we can vaguely ask what are the properties of
 subsets $A \subseteq \bbN$ for which $\VDW(A)$ is true?
 
