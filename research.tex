@@ -13,6 +13,7 @@
 
 \theoremstyle{definition}
 \newtheorem{defn}[thm]{Definition}
+\newtheorem{rmk}[thm]{Remark}
 
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\VDW}{\mathcal{VDW}}
@@ -21,85 +22,123 @@
 
 
 \begin{document}
-
-\subsection{Van der Waerden's Theorem and Hindman's Theorem}
-Van der Waerden's Theorem is one of the early important theorems in
-Ramsey Theory \cite{Van-der-Waerden:1927fk} that asserts that if we
-finitely partition the natural numbers, we can find a finite
-arithmetic progression of any length in at least one class of the
-partition.
-More precisely we have
-  \begin{vdw}
-    For every natural number $r$, if\/ $\bbN = \bigcup_{i=1}^r C_i$,
-    then for every natural number $k$ there exist $i \in \{1, 2,
-    \ldots, r\}$ and natural numbers $a$ and $d$ such that $\{\, a,
-    a+d, \ldots, a+(k-1)d\,\} \subseteq C_i$.
-  \end{vdw}
-Another important theorem in Ramsey Theory that was published
-forty-seventy years after van der Waerden's result is Hindman's
-Theorem.
-  \begin{fst}
-    For every natural number $r$, if\/ $\bbN = \bigcup_{i=1}^r C_i$,
-    then there exist $i \in \{1, 2, \ldots, r\}$ and a sequence $\la x_n
-    \ra_{n=1}^\infty$ of natural numbers such that $\{\, \sum_{n \in
-      F} x_n : \emptyset \ne F \subseteq \bbN \hbox{ is finite} \,\}
-    \subseteq C_i$.
-  \end{fst}
-Hindman's Theorem has a different character then van der Waerden's Theorem.
-
 \section{Research Description}
 \subsection{Hindman's Theorem}
-Issai Schur proved, in 1916 \cite{Schur:1916fk}, that if the natural
-numbers are divided into finitely many classes, then there exists natural
-numbers $x$ and $y$ such that $x$, $y$, and $x+y$ all lie in one
-class.
-Schur's Theorem was generalized by several people, among them Richard
-Rado \cite{Rado:1933kx} (a student of Schur), Jon Henry Sanders
-\cite{Sanders:1968uq}, and Jon Folkman \cite{Graham:1971vn}.
+One of the earliest result in Ramsey Theory was proved by Issai Schur
+in \cite{Schur:1916fk}.
+His theorem states that if the natural numbers are divided into
+finitely many classes, then there exists natural numbers $x$ and $y$
+such that $x$, $y$, and $x+y$ all lie in one class.
+Schur's Theorem has been generalized in a particular direction by
+several people.
+(Among them are, a student of Schur, Richard Rado in
+\cite{Rado:1933kx}, Jon Henry Sanders in \cite{Sanders:1968uq}, and
+Jon Folkman is credited in \cite{Graham:1971vn}.)
 This particular generalization states that if the natural numbers are
-divided into finitely many classes, then for every $m \in \bbN$ there
-exists a
-sequence of natural numbers $\la x_n \ra_{n=1}^m$ such that the set
-$\bigl\{\, \sum_{n \in F} x_n : \emptyset \ne F \subseteq \{1, 2, \ldots,
-m\} \,\bigr\}$ is contained in one of the classes.
+divided into finitely many classes, then for ever natural number $m$
+there exists a sequence of natural numbers $\la x_n \ra_{n=1}^m$ such
+that the set $\{\, \sum_{n \in F} x_n : \emptyset \ne F \subseteq \{1,
+2, \ldots, m\} \,\}$ is contained in one of the classes.
+However in \cite{Hindman:1974ys}, Neil Hindman proved the most general
+version of these Schur-type theorems currently known. 
 
-Neil Hindman proved, in 1974 \cite{Hindman:1974ys} the most general
-version of the Rado-Sanders-Folkman Theorem currently known.
   \begin{fst}
-    For all natural numbers $r$, if $\bbN = \bigcup_{i=1}^r C_i$, then
+    For all natural numbers $r$, if \/ $\bbN = \bigcup_{i=1}^r C_i$, then
     there exist $i \in \{1, 2, \ldots, r\}$ and a sequence of natural
     numbers $\la x_n \ra_{n=1}^\infty$ such that
       \[
-        \Bigl\{\,\sum_{n \in F} x_n : \emptyset \ne F \subseteq \bbN \hbox{
-          is finite} \,\Bigr\} \subseteq C_i.
+        \Bigl\{\, \sum_{n\in F} x_n : \emptyset \ne F \subseteq \bbN
+        \hbox{ is finite} \,\Bigr\} \subseteq C_i.
       \]
   \end{fst}
-This theorem is important as a strong generalization of
-the Rado-Sanders-Folkman Theorem, but for us it is also important because
-Hindman's Theorem is equivalent to the existence of objects called
-idempotent ultrafilters on $\bbN$.
 
-\subsection{Idempotent Ultrafilters}
+By \cite[Theorems 16.28 and 16.29]{Hindman:1998fk}, Hindman's Theorem
+is a strictly stronger then the Rado-Sanders-Folkman result, and
+\cite{Milliken:1978fk} shows that there are limits on any possible
+uncountable generalization of Hindman's Theorem.
+The original proof of this theorem uses an elementary, but
+complicated, combinatorial argument. 
+Baumgartner in \cite{Baumgartner:1974uq} produced a shorter
+combinatorial proof based off the original argument. 
+However the easiest, and with the proper background, the shortest
+proof involves the somewhat exotic objects called idempotent
+ultrafilters. 
+
+The fact that Hindman's Theorem is intimately connected with
+idempotent ultrafilters is a fortuitous connection that has proven to
+be only the first of the many interesting connections between Ramsey
+Theory and ultrafilters.
+However before we can explore these applications we review a
+construction of the Stone-\v{C}ech compactification of $\bbN$ via
+ultrafilters and learn how we can give an algebraic structure to this
+compactification.
+
+\subsection{Algebraic Structure of the Stone-\v{C}ech Compactification}
+We will construct the Stone-\v{C}ech compactification of $\bbN$ via
+ultrafilters of $\bbN$.
   \begin{defn}
-    Let $\emptyset \ne p \subseteq \mathcal{P}(\bbN)$.
-    We say that $p$ is an \textsl{ultrafilter on $\bbN$} if and only
-    if it satisfies the following four properties.
+    Let $p \subseteq \mathcal{P}(\bbN)$ be nonempty.
+    We call $p$ an \textsl{ultrafilter on $\bbN$} if and only if it
+    satisfies the following four properties.
       \begin{itemize}
-        \item[(1)] $\emptyset \not\in p$.
-        \item[(2)] If $A \in p$ and $A \subseteq B \subseteq \bbN$,
+        \item[(1)] If $A \in p$ and $A \subseteq B \subseteq \bbN$,
           then $B \in p$.
-        \item[(3)] If $A$, $B \in p$, then $A \cap B \in p$.
+        \item[(2)] If $A$, $B \in p$, then $A \cap B \in p$.
+        \item[(3)] $\emptyset \not\in p$.
         \item[(4)] For all $A \subseteq \bbN$, either $A \in p$ or
           $\bbN \setminus A \in p$.
       \end{itemize}
   \end{defn}
-
-It's easy to construct (essentially trivial) ultrafilters on $\bbN$.
-For a point $a \in \bbN$ and put $e(a) = \,\{ A \subseteq \bbN : a \in A
+It's easy to construct (essentially trivial) ultrafilters. 
+For all $a \in \bbN$, put $e(a) = \{\, A \subseteq \bbN : a \in A
 \,\}$.
-Then it is simple exercise to show that $e(a)$ is an ultrafilter on
-$\bbN$ for any $a \in \bbN$.
+Then it is a simple exercise to show that $e(a)$ is an ultrafilter on
+$\bbN$. 
 We call such ultrafilters \textsl{principal ultrafilters}. 
+The existence of nonprincipal ultrafilters follows from an application
+of Zorn's Lemma. 
+
+We will soon put a topology and algebraic structure on the collection
+of all ultrafilters on $\bbN$. 
+In preparation, we make the following list of definitions.
+
+  \begin{defn}
+    \begin{itemize}
+      \item[(a)] $\beta\bbN = \{\, p : \hbox{$p$ is an ultrafilter on
+          $\bbN$} \,\}$.
+      \item[(b)] For all $A \subseteq \bbN$, put $\overline{A} = \{\,
+        p \in \beta\bbN : A \in p \,\}$.
+      \item[(c)] For all $A \subseteq \bbN$ and $x \in \bbN$, put
+        $-x+A = \{\, y \in \bbN : x+y \in A \,\}$.
+      \item[(d)] For $p$, $q \in \beta\bbN$, define
+        $p+q = \bigl\{\, A \subseteq \bbN : \{\, x \in \bbN : -x +A \in q
+        \,\} \in p \,\bigr\}$.
+      \item[(e)] We say $p \in \beta\bbN$ is an \textsl{idempotent} if
+        and only if $p + p = p$.
+    \end{itemize}
+  \end{defn}
+
+The collection $\{\, \overline{A} : A \subseteq \bbN \,\}$ forms a
+basis for a topology on $\beta\bbN$.
+If we identify $\bbN$ with the principal ultrafilters by the function
+$a \mapsto e(a)$, then $\beta\bbN$ is simply the Stone-\v{C}ech
+compactification of $\bbN$. 
+For all $p$, $q \in \beta\bbN$, we can check that $p+q$ is an
+ultrafilter and hence $p+q \in \beta\bbN$.
+In fact with this definition $(\beta\bbN, +)$ becomes a (commutative!)
+semigroup, and with our identification of $\bbN$ with the principal
+ultrafilters the addition on $\beta\bbN$ is an extension of the usual
+addition on $\bbN$. 
+
+With all of our definitions $(\beta\bbN, +)$ becomes a compact
+Hausdorff right-topological semigroup. 
+(The right-topological semigroup part means that for all $p \in
+\beta\bbN$, the function $q \mapsto q+p$ is continuous.)
+It's a fact due to Robert Ellis that every compact right-topological
+semigroup contains idempotents. 
+It's also a particular fact that $\beta\bbN$ has $2^\mathfrak{c}$ (see
+\cite[Theorem 6.44]{Hindman:1998fk}) idempotents
+where $\mathfrak{c}$ is the cardinality of the continuum. 
 
 \subsection{Van der Waerden's Theorem}
 The field of Ramsey Theory is broadly described as the study of large
