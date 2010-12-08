@@ -1,5 +1,51 @@
 Sketch of Research Statement
 
+Project Summary 
+
+    - at most one page
+    
+    - third person
+    
+    - highlight intellectual merit and broader impact
+
+Biographical Sketch
+
+    - at most two pages
+
+    - professional preparation
+
+    - appointments
+
+    - publications (none!)
+
+    - synergistic activities
+
+    - grad advisor
+
+Project Description
+    
+    - at most 15 pages
+
+    - prior results with project
+
+    - significance of idea
+
+    1. Hindman's Theorem
+
+    2. Algebraic Structure of the Stone-Cech compactification
+
+    3. Other Important Ideals in bN
+
+    4. Roth's Theorem and Ideals in bN
+
+Broader Impact
+ 
+    - High school GK12-type partnership
+
+    - PFF partnership with Howard
+
+
+
 1. Hindman's Theorem
    X In 1916 Schur proved blah
    X A generalization of Schur's Theorem was proved by several people:
