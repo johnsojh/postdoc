@@ -25,7 +25,7 @@
 \section{Research Description}
 \subsection{Hindman's Theorem}
 Issai Schur, in \cite{Schur:1916fk}, proved one of the earliest
-results in Ramsey Theory
+results in Ramsey Theory. 
 His theorem states that if the natural numbers are divided into
 finitely many classes, then there exists natural numbers $x$ and $y$
 such that $x$, $y$, and $x+y$ all lie in one class.
@@ -65,11 +65,13 @@ result.
 
 The original proof of this theorem uses an elementary, but
 complicated, combinatorial argument. 
-Baumgartner in \cite{Baumgartner:1974uq} produced a shorter
-combinatorial proof, based off the original argument, by looking at an
-equivalent statement involving the union of finite subsets of $\bbN$. 
-However it was known that an easy proof of Hindman's Theorem would
-follow from the existence of the somewhat exotic objects called
+By looking at an equivalent statement, involving the union of finite
+subsets of $\bbN$, Baumgartner in \cite{Baumgartner:1974uq} produced a
+shorter and slightly easier combinatorial proof based off the original
+argument.
+However, even before these combinatorial proofs were discovered
+it was shown by Fred Galvin that an easy proof of Hindman's Theorem
+would follow from the existence of the somewhat exotic objects called
 idempotent ultrafilters. 
 The notes section in \cite[Chapter 5]{Hindman:1998fk} contain a brief
 and interesting history about Hindman's Theorem. 
@@ -78,10 +80,12 @@ The fact that Hindman's Theorem is intimately connected with
 idempotent ultrafilters is a fortuitous connection that has proven to
 be only the first of many interesting connections between Ramsey
 Theory and ultrafilters.
+(It's a fact that Hindman's Theorem is equivalent to the existence of
+idempotent ultrafilters!)
 Moreover, despite over thirty years of study, there are still many
 attractive open questions about the applications of ultrafilters to
 Ramsey Theory. 
-Before we can even state these questions we pause to give a brief
+Before we can even state these questions we to give a brief
 outline on the construction of the algebraic structure of the
 Stone-\v{C}ech compactification of $\bbN$ via ultrafilters.
 
@@ -104,12 +108,11 @@ We first recall the definition of an ultrafilters on $\bbN$.
       \end{itemize}
   \end{defn}
   \begin{rmk}
-    We have chosen this, somewhat nonstandard, form of property (4) to
-    illustrate the connection between partition regular Ramsey Theory
-    statements and ultrafilters.
-    \cite[Theorem 5.7]{Hindman:1998fk} makes the connection precise by
-    roughly stating that ``any question in Ramsey Theory is a question
-    about ultrafilters.''
+    For property (4), we have chosen this, somewhat nonstandard, form
+    to hint at the connection between Ramsey Theory and ultrafilters.
+    The result \cite[Theorem 5.7]{Hindman:1998fk} makes this
+    connection precise by roughly stating that ``any question in
+    Ramsey Theory is a question about ultrafilters.''
   \end{rmk}
 
 It's easy to construct (essentially trivial) ultrafilters. 
@@ -163,43 +166,34 @@ semigroup contains idempotents.
 It's also a fact particular to $\beta\bbN$ that this space has
 $2^\mathfrak{c}$ (see \cite[Theorem 6.44]{Hindman:1998fk}) idempotents
 where $\mathfrak{c}$ is the cardinality of the continuum. 
+Finally, it's also a simple fact that all idempotents in $\beta\bbN$
+are necessarily noncprincipal ultrafilters. 
 
 The reader may well wonder how all of this elaborate equipment can be
 put to use. 
 As an illustrative example, we indicate how idempotent ultrafilters
-can be used to give an easy proof of Hindman's Theorem. 
-(We won't prove the whole thing however, we'll just show the $m=3$
-case of the Rado-Sanders-Folkman Theorem.)
+can be used to give an easy proof of Schur's Theorem. 
 
   \begin{thm}
     For every natural number $r$, if  \/ $\bbN = \bigcup_{i=1}^r C_i$,
-    then there exist $i \in \{1, 2, \ldots, r\}$ and a finite sequence
-    of natural numbers $\la x_1, x_2, x_3 \ra$ such that $\bigl\{\,
-    \sum_{n\in F} x_n : \emptyset \ne F \subseteq \{1,2,3\} \,\bigr\}
-    \subseteq C_i$.
+    then there exist $i \in \{1, 2, \ldots, r\}$ and natural numbers
+    $x$ and $y$ such that $\{\, x, y, x+y \,\} \subseteq C_i$.
   \end{thm}
   \begin{proof}
     Pick an idempotent ultrafilter $p + p = p \in \beta\bbN$. 
     Since $\bbN = \bigcup_{i=1}^r C_i$ and $\bbN \in p$, it follows by
-    Definition \ref{defn:uf} that we can pick $i \in \{1, 2, \ldots,
+    Definition \ref{defn:uf}(4) that we can pick $i \in \{1, 2, \ldots,
     r\}$ such that $C_i \in p$. 
-    By Definition \ref{defn:alg}(d) we have that $\{\, x \in \bbN : -x
+    By Definition \ref{defn:alg}(d) we have that $\{\, z \in \bbN : -z
     + C_i \in p \,\} \in p$.
-    Hence again by definition \ref{defn:uf}, we have that $\{\, x \in
-    C_i : -x + C_i \in p \,\} = C_i \cap
-    \{\, x \in \bbN : -x + C_i \in p \,\} \in p$.
+    Hence again by Definition \ref{defn:uf}(2), we have that $\{\, z \in
+    C_i : -z + C_i \in p \,\} = C_i \cap
+    \{\, z \in \bbN : -z + C_i \in p \,\} \in p$.
 
-    Pick $x_1 \in \{\,x \in C_i: -x + C_i \in p \,\}$, then
-    $x_1 \in C_i$ and $-x_1 + C_i \in p$. 
-    We have that $\{\,x \in \bbN : -(x_1+x)+C_i \in p \,\} \in p$.
-    So pick $x_2 \in \{\, x \in \bbN : -(x_1+x)+C_i \in p \,\} \cap
-    (-x_1+C) \cap \{\, x \in C_i : -x+C_i \in p \,\}$.
-    Then $x_2 \in C_i$, $x_1+x_2 \in C_i$, $-x_2 + C_i \in p$, and
-    $-(x_1 + x_2) + C_i \in p$.
-    Finally pick $x_3 \in C_i \cap (-x_1+C_i) \cap (-x_2+C_i) \cap
-    -(x_1+x_2) + C_i$. 
-    Hence we have that $\{\, x_1, x_2, x_3, x_1+x_2, x_1+x_3, x_2+x_3,
-    x_1+x_2+x_3 \,\} \subseteq C_i$.
+    Pick $x \in \{\,z \in C_i: -z + C_i \in p \,\}$, then by
+    Definition \ref{defn:uf}(2), $C_i \cap (-x+C_i) \in p$.
+    Pick $y \in C_i \cap (-x+C_i)$.
+    Then $\{\, x, y, x+y\,\} \subseteq C_i$.
   \end{proof}
 Turning this into a full proof of Hindman's Theorem requires a
 suitable induction argument on the length of the sequence you have
@@ -229,6 +223,9 @@ the algebraic structure of $\beta\bbN$.
   \end{defn}
 It is a fact\cite[Theorem 2.8]{Hindman:1998fk} that the smallest ideal
 exists for any compact Haudorff right-topological semigroup. 
+It's an empirical fact that most Ramsey Theory statements are either
+about idempotents or ideals.
+For instance, van \dots
 
 
 \bibliographystyle{plain}
