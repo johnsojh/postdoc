@@ -29,66 +29,50 @@ Issai Schur, in \cite{Schur:1916fk}, proved one of the earliest
 results in Ramsey Theory. 
 His theorem states that if the natural numbers are divided into
 finitely many classes, then there exists natural numbers $x$ and $y$
-such that $x$, $y$, and $x+y$ all lie in one class.
-Schur's Theorem has been generalized, in one particular direction, by
-several people.
-(Among them Richard Rado in \cite{Rado:1933kx}, who was a student of
-Schur, Jon Henry Sanders in \cite{Sanders:1968uq}, and Jon Folkman is
-credited in \cite{Graham:1971vn}.)
-This particular generalization states that if the natural numbers are
-divided into finitely many classes, then for every natural number $m$
-there exists a sequence of natural numbers $\la x_n \ra_{n=1}^m$ such
-that the set $\bigl\{\, \sum_{n \in F} x_n : \emptyset \ne F \subseteq \{1,
-2, \ldots, m\} \,\bigr\}$ is contained in one of the classes.
-However in \cite{Hindman:1974ys}, Neil Hindman proved the most general
-version of these Schur-type theorems currently known. 
-
+such that $\{\, x, y, x+y \,\}$ is contained in one class.
+Richard Rado (a student of Schur) in \cite{Rado:1933kx}, Jon Sanders
+in \cite{Sanders:1968uq}, and Jon Folkman (credited in
+\cite{Graham:1971vn}) all proved the following generalization of
+Schur's Theorem.
+If the natural numbers are divided into finitely many classes, then
+for every $m \in \bbN$ there exist a sequence $\la x_n \ra_{n=1}^m$
+and a class that contains $\bigl\{\, \sum_{n \in F} x_n : \emptyset
+\ne F\subseteq \{1, 2, \ldots, m\} \,\bigr\}$.
+Several years later Neil Hindman proved, in \cite{Hindman:1974ys},
+another generalization of Schur's Theorem which is strictly stronger
+than the Rado-Sanders-Folkman Theorem \cite[Theorems 16.28 and
+16.29]{Hindman:1998fk} and moreover, cannot be generalized to an
+``uncountable index'' \cite{Milliken:1978fk}.
   \begin{fst}
     For all natural numbers $r$, if \/ $\bbN = \bigcup_{i=1}^r C_i$, then
-    there exist $i \in \{1, 2, \ldots, r\}$ and a sequence of natural
-    numbers $\la x_n \ra_{n=1}^\infty$ such that
+    there exist $i \in \{1, 2, \ldots, r\}$ and a sequence $\la x_n
+    \ra_{n=1}^\infty$ in $\bbN$ such that
       \[
         \Bigl\{\, \sum_{n\in F} x_n : \emptyset \ne F \subseteq \bbN
         \hbox{ is finite} \,\Bigr\} \subseteq C_i.
       \]
   \end{fst}
 
-Intuitively Hindman's Theorem is a very strong result.
-For instance, it's strictly stronger than the Rado-Sanders-Folkman
-result \cite[Theorems 16.28 and 16.29]{Hindman:1998fk}; and,
-\cite{Milliken:1978fk} shows that there are limits on any possible
-uncountable generalizations of Hindman's Theorem. 
-We shall soon see further evidence for the strength of this theorem,
-since in a certain sense, Hindman's Theorem touches on most of the
-known Ramsey Theory type results. 
-This connection was foreshadowed by the search for a proof of this
-result. 
-
 The original proof of this theorem uses an elementary, but
 complicated, combinatorial argument. 
-By looking at an equivalent statement, involving the union of finite
-subsets of $\bbN$, Baumgartner in \cite{Baumgartner:1974uq} produced a
-shorter and slightly easier combinatorial proof based off the original
-argument.
-However, even before these combinatorial proofs were discovered
-it was shown by Fred Galvin that an easy proof of Hindman's Theorem
-would follow from the existence of the somewhat exotic objects called
-idempotent ultrafilters. 
-The notes section in \cite[Chapter 5]{Hindman:1998fk} contain a brief
-and interesting history about Hindman's Theorem. 
+(However, Baumgartner gives a shorter and slightly easier
+combinatorial proof in \cite{Baumgartner:1974uq}.)
+Even before the first combinatorial proof was discovered it was shown
+by Fred Galvin that an easy proof of Hindman's Theorem would follow
+from the existence of, the somewhat exotic object called, an idempotent
+ultrafilter. 
+A brief summary of the interesting history of Hindman's Theorem can be
+found in the notes section of \cite[Chapter 5]{Hindman:1998fk}. 
 
-The fact that Hindman's Theorem is intimately connected with
-idempotent ultrafilters is a fortuitous connection that has proven to
-be only the first of many interesting connections between Ramsey
-Theory and ultrafilters.
-(It's a fact that Hindman's Theorem is equivalent to the existence of
-idempotent ultrafilters!)
+This connection between Hindman's Theorem and idempotent ultrafilters
+was only the first of many connections between Ramsey Theory and
+ultrafilters.
 Moreover, despite over thirty years of study, there are still many
-attractive open questions about the applications of ultrafilters to
+attractive open questions on the applications of ultrafilters to
 Ramsey Theory. 
-Before we can even state these questions we to give a brief
-outline on the construction of the algebraic structure of the
-Stone-\v{C}ech compactification of $\bbN$ via ultrafilters.
+Before we can even state those particular questions that interest us,
+we pause to give a brief outline of the requisite results and
+definitions. 
 
 \subsection{Algebraic Structure of the Stone-\v{C}ech Compactification}
 We first recall the definition of an ultrafilter on $\bbN$.
