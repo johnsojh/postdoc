@@ -237,9 +237,52 @@ set of definitions.
   \end{defn}
 It follows from \cite[Theorem 2.8]{Hindman:1998fk} that the smallest ideal
 exists for any compact Haudorff right-topological semigroup. 
-I can now state the problems I'm interested in investigating.
+
+Using the concepts of closed left ideals and closed two-sided ideals
+we can give the connection between another class of Ramsey Theory
+statements, and give the open problems I'm interested in researching.
 
 \subsection{Algebraic Proof of Roth's Theorem}
+Bartel Leendert van der Waerden proved in
+\cite{Van-der-Waerden:1927fk} that if the natural numbers are divided
+into finitely many classes, then for every natural number $k$ at least
+once class contains a $k$-term arithmetic progression. 
+Using van der Waerden's Theorem and the pigeonhole principle it's
+possible to prove, the superficially stronger statement, that one
+class contains a $k$-term arithmetic progression for every natural
+number $k$. 
+Almost a decade after van der Waerden published his proof, Erd\H{o}s
+and Turan started to investigate which notion of ``size'' guarantees
+the conclusion of van der Waerden's Theorem in \cite{Erdos:1936fk}.
+To state one of there implicit conjectures in the paper we introduce
+the following definition.
+
+  \begin{defn}
+    For all $A \subseteq \bbN$, define the \textsl{upper asymptotic
+      density} of $A$ by 
+      \[
+        \overline{d}(A) = \limsup_{N\to\infty} \frac{A \cap \{1, 2,
+          \ldots, N\}}{N}.
+      \]
+  \end{defn}
+
+Erd\H{o}s and Turan conjectured that if $\overline{d}(A) > 0$, then
+$A$ contains a $k$-term arithmetic progression for every natural
+number $k$.
+Their conjecture turned out to be correct and was proved almost forty
+years later by Szemer\'{e}di in \cite{Szemeredi:1975uq}. 
+To state Szemer\'{e}di's Theorem in algebraic language we introduce
+the following two definitions.
+  \begin{defn}
+    \begin{itemize}
+      \item[(a)] $\Delta = \{\, p \in \beta\bbN : \overline{d}(A) > 0
+        \hbox{ for all } A \in p \,\}$.
+      \item[(b)] $\mathcal{AP} = \{\, p \in \in \beta\bbN : \hbox{for
+          all $A \in p$ } A \hbox{ contains a $k$-term arithmetic
+          progression for every $k \in \bbN$} \,\}$.
+    \end{itemize}
+  \end{defn}
+
 Two important results in Ramsey Theory are Szem\'{e}rdi's Theorem and
 Roth's Theorem. 
 To state these theorems we introduce the familiar notion of \textsl{upper
