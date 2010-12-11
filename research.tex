@@ -3,7 +3,8 @@
 \usepackage[margin=1in]{geometry}
 \usepackage[doublespacing]{setspace}
 \usepackage{amsthm, amssymb, amsmath}
-\usepackage[all]{xy}
+% \usepackage[all]{xy}
+\usepackage{booktabs}
 
 \newtheoremstyle{plain}{3mm}{3mm}{\slshape}{}{\bfseries}{.}{.5em}{}
 \theoremstyle{plain}
@@ -203,20 +204,63 @@ Before giving any formal definitions however, we turn our attention
 back to combinatorial statements whose history runs almost parallel to
 the Schur-type additive results we have seen so far.
 
-\subsection{Algebraic Proof of Roth's Theorem}
-Bartel Leendert van der Waerden proved in
-\cite{Van-der-Waerden:1927fk} that if the natural numbers are divided
-into finitely many classes, then for every natural number $k$ at least
-once class contains a $k$-term arithmetic progression. 
-Using van der Waerden's Theorem and the pigeonhole principle it's
-possible to prove, the superficially stronger statement, that one
+\subsection{Szemer\'{e}di's Theorem}
+Bartel Leendert van der Waerden, in \cite{Van-der-Waerden:1927fk},
+proved that if the natural numbers are divided into finitely many
+classes, then for every natural number $k$ at least one class contains
+a $k$-term arithmetic progression. 
+In fact, using van der Waerden's Theorem and the pigeonhole principle
+we can easily derive the superficially stronger statement that one
 class contains a $k$-term arithmetic progression for every natural
-number $k$. 
+number $k$.
 Almost a decade after van der Waerden published his proof, Erd\H{o}s
-and Turan started to investigate which notion of ``size'' guarantees
-the conclusion of van der Waerden's Theorem in \cite{Erdos:1936fk}.
-To state one of there implicit conjectures in the paper we introduce
-the following definition.
+and Tur\'{a}n stated a conjecture in \cite{Erdos:1936fk} on a
+generalization of van der Waerden's Theorem has been the source for a
+vibrant avenue of research.
+To state their conjecture we define the \textsl{upper asymptotic
+  density} of $A \subseteq \bbN$ by 
+  \[
+    \overline{d}(A) = \limsup_{N\to\infty} \frac{|A \cap \{1, 2,
+      \ldots, N\}|}{N}.
+  \]
+Erd\H{o}s and Tur\'{a}n conjectured that if $\overline{d}(A) > 0$,
+then $A$ contains a $k$-term arithmetic progression for every natural
+number $k$. 
+
+Their conjecture turned out to be both correct and a hard problem; it
+was proved almost forty years later by Szemer\'{e}di in
+\cite{Szemeredi:1975uq}. 
+(If a set with positive upper density is divided into finitely many
+classes, then at least one class has positive upper density.
+Combining this fact with Szemer\'{e}di's Theorem gives us van der
+Waerden's Theorem.)
+Szemer\'{e}di's proof of his theorem uses an elementary, but
+complicated, combinatorial argument. 
+Shortly after this original proof, Furstenburg give another proof
+in \cite{Furstenberg:1977fk} that used Ergodic Theory. 
+After these initial proofs, a number of other different proofs have since
+been discovered.
+We summarize these difference methods in the following table.
+Limited space and mathematical competence prohibits us from accurately
+and sufficiently explaining how each method of proof works. 
+Hence we can do little more than name-drop in our table. 
+However, we shall soon see that even this name-dropping will serve a
+purpose. 
+
+  \begin{tabular}[center]{lcl}
+    \toprule
+    Author(s) & Citation & What (and how) they proved\\
+    \midrule
+    Furstenburg and Katznelzon & \cite{Furstenburg:1989kx},
+    \cite{Furstenburg:1991vn} & Density Hales-Jewett Theorem (Ergodic
+    Theory) \\
+    Furstenburg and Katznelzon & \cite{Furstenburg:1978ys} & Multidimensional Szemer\'{e}di
+    Theorem (Ergodic Theory) \\
+    Gowers & \cite{Gowers:2001uq} & Szemer\'{e}di's Theorem
+    (finite Fourier analysis argument)
+  \end{tabular}
+
+\subsection{Algebraic Proof of Roth's Theorem}
 
   \begin{defn}
     For all $A \subseteq \bbN$, define the \textsl{upper asymptotic
