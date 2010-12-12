@@ -12,6 +12,7 @@
 \newtheorem{vdw}[thm]{Van der Waerden's Theorem}
 \newtheorem{fst}[thm]{Hindman's Theorem}
 \newtheorem{schur}[thm]{Schur's Theorem}
+\newtheorem{sz}[thm]{Szemer\'{e}di's Theorem}
 
 \theoremstyle{definition}
 \newtheorem{defn}[thm]{Definition}
@@ -159,7 +160,7 @@ It's a fact due to Robert Ellis \cite[Corollary 2.10]{Ellis:1969zr}
 that every compact Hausdorff right-topological semigroup contains
 idempotents. 
 In the case of $\beta\bbN$, we have 
-$2^{2^\aleph_0}$) idempotents \cite[Theorem
+$2^{2^{\aleph_0}}$) idempotents \cite[Theorem
 6.44]{Hindman:1998fk}. 
 
 
@@ -209,26 +210,31 @@ Bartel Leendert van der Waerden, in \cite{Van-der-Waerden:1927fk},
 proved that if the natural numbers are divided into finitely many
 classes, then for every natural number $k$ at least one class contains
 a $k$-term arithmetic progression. 
+For expository convenience we will call a subset of the natural
+numbers that contains a $k$-term arithmetic progression a
+\textsl{$k$AP-set}.
 In fact, using van der Waerden's Theorem and the pigeonhole principle
 we can easily derive the superficially stronger statement that one
-class contains a $k$-term arithmetic progression for every natural
-number $k$.
+class is a $k$AP-set for every natural number $k$.
 Almost a decade after van der Waerden published his proof, Erd\H{o}s
-and Tur\'{a}n stated a conjecture in \cite{Erdos:1936fk} on a
-generalization of van der Waerden's Theorem has been the source for a
-vibrant avenue of research.
-To state their conjecture we define the \textsl{upper asymptotic
+and Tur\'{a}n stated a conjecture in \cite{Erdos:1936fk} about a
+generalization of van der Waerden's Theorem that continues to be the
+source of vibrant research.
+
+To state their conjecture we define the \textsl{upper (asymptotic)
   density} of $A \subseteq \bbN$ by 
   \[
     \overline{d}(A) = \limsup_{N\to\infty} \frac{|A \cap \{1, 2,
       \ldots, N\}|}{N}.
   \]
-Erd\H{o}s and Tur\'{a}n conjectured that if $\overline{d}(A) > 0$,
-then $A$ contains a $k$-term arithmetic progression for every natural
-number $k$. 
+  \begin{sz}[Erd\H{o}s-Tur\'{a}n Conjecture]
+    \label{sz:upperdensity}
+    If $A \subseteq \bbN$ and $\overline{d}(A) > 0$, then $A$ is a
+    $k$AP-set for every $k \in \bbN$.
+  \end{sz}
 
-Their conjecture turned out to be both correct and a hard problem; it
-was proved almost forty years later by Szemer\'{e}di in
+The Erd\H{o}s-Tur\'{a}n Conjecture turned out to be both correct and a
+hard problem; it was proved almost forty years later by Szemer\'{e}di in
 \cite{Szemeredi:1975uq}. 
 (If a set with positive upper density is divided into finitely many
 classes, then at least one class has positive upper density.
@@ -236,29 +242,85 @@ Combining this fact with Szemer\'{e}di's Theorem gives us van der
 Waerden's Theorem.)
 Szemer\'{e}di's proof of his theorem uses an elementary, but
 complicated, combinatorial argument. 
-Shortly after this original proof, Furstenburg give another proof
+Shortly after this original proof, Furstenburg produced another proof
 in \cite{Furstenberg:1977fk} that used Ergodic Theory. 
-After these initial proofs, a number of other different proofs have since
-been discovered.
-We summarize these difference methods in the following table.
-Limited space and mathematical competence prohibits us from accurately
-and sufficiently explaining how each method of proof works. 
-Hence we can do little more than name-drop in our table. 
-However, we shall soon see that even this name-dropping will serve a
-purpose. 
 
-  \begin{tabular}[center]{lcl}
-    \toprule
-    Author(s) & Citation & What (and how) they proved\\
-    \midrule
-    Furstenburg and Katznelzon & \cite{Furstenburg:1989kx},
-    \cite{Furstenburg:1991vn} & Density Hales-Jewett Theorem (Ergodic
-    Theory) \\
-    Furstenburg and Katznelzon & \cite{Furstenburg:1978ys} & Multidimensional Szemer\'{e}di
-    Theorem (Ergodic Theory) \\
-    Gowers & \cite{Gowers:2001uq} & Szemer\'{e}di's Theorem
-    (finite Fourier analysis argument)
-  \end{tabular}
+Furstenburg, for technical reasons, proved a slightly different form
+of Szemer\'{e}di's Theorem. 
+We choose to give this alternate form because their slight differences
+will produce interesting algebraic consequences latter.
+Define the \textsl{Banach density} of $A \subseteq \bbN$ by
+  \begin{align*}
+    d^*(A) &= \sup\bigl\{\, \alpha \in [0,1] : \hbox{for all $k \in
+      \bbN$, there exist $n \ge k$ and $a \in \bbN$} \\
+    &\hspace{5em}\hbox{such that $|A \cap \{\,a, a+1, \ldots,
+      a+n-1\,\}| \ge \alpha\cdot n$} \,\bigr\}.
+  \end{align*}
+  \begin{sz}[Alternate form]
+    \label{sz:banach}
+    If $A \subseteq \bbN$ and $d^*(A) > 0$, then $A$ is a $k$AP-set
+    for every $k \in \bbN$.
+  \end{sz}
+It's a straightforward exercise to show that if $\overline{d}(A) > 0$,
+then $d^*(A) > 0$.
+Therefore given Theorem \ref{sz:banach} we can derive Theorem
+\ref{sz:upperdensity}.
+The fact that Theorem \ref{sz:upperdensity} can be derive Theorem
+\ref{sz:banach} was proved by Hindman in \cite[Theorem
+2.1]{Hindman:1982fk}.
+Hence we are justified in calling both versions Szemer\'{e}di's
+Theorem. 
+
+After these two initial proofs, a number of different types of proofs
+have been discovered. 
+The two latest proofs have been produced by Ben Green and Terence Tao
+in \cite{Green:2010uq} and the (online) polymath group in
+\cite{Polymath:2010kx}. 
+However, despite the great variety of proofs produced so far, their is
+currently no known ``algebraic proof'' of Szemer\'{e}di's Theorem.
+By an algebraic proof I mean a proof that uses nothing but the
+algebraic structure of $(\beta\bbN, +)$. 
+
+Of course it is not obvious that such a proof, even in principle,
+exists.
+But, in the next section we give two pieces of evidence that an
+algebraic proof may exist. 
+
+\subsection{Evidence for Algebraic Proof of Szemer\'{e}di's Theorem}
+Given subsets $A$ and $B$ of $\beta\bbN$, we put $A+B = \{\, p + q : p
+\in A \hbox{ and } q \in B \,\}$.
+  \begin{defn}
+    Let $\emptyset \ne I \subseteq \beta\bbN$.
+      \begin{itemize}
+        \item[(a)] $I$ is a \textsl{left ideal} if and only if
+          $\beta\bbN + I \subseteq I$.
+        \item[(b)] $I$ is a \textsl{right ideal} if and only if
+          $I+\beta\bbN \subseteq I$.
+        \item[(c)] $I$ is a \textsl{(two-sided) ideal} if and only if
+          $I$ is both a left and right ideal.
+      \end{itemize}
+  \end{defn}
+In order to make our next set of definitions we define the
+\textsl{Banach density} of $A \subseteq \bbN$ by $d^*(A) = \bigl\{
+\alpha \in [0,1] : \hbox{for all $k \in \bbN$}\hbox{ there exist $n
+  \ge k$ and $a \in \bbN$}\hbox{ such that $|A \cap \{\,a, a+1,
+  \ldots, a+n-1\,\}| \ge \alpha \cdot n$} \,\bigr\}$.
+
+  \begin{defn}
+    \begin{itemize}
+      \item[(a)] $\mathcal{AP} = \{\, p \in \beta\bbN : \hbox{for all
+          $A \in p$ $A$ contains a $k$-term arithmetic progression
+          for every $k \in \bbN$} \,\}$.
+      \item[(b)] $\Delta = \{\, p \in \beta\bbN : \hbox{for all $A \in
+          p$, $\overline{d}(A) > 0$} \,\}$.
+      \item[(c)] $\Delta^* = \{\, p \in \beta\bbN : \hbox{for all $A
+          \in p$, $d^*(A) > 0$} \,\}$.
+      \item[(d)] $\Delta_1 = \{\, p \in \beta\bbN : \hbox{for all $A
+            \in p$, there exists $m \in \bbN$ such that
+            $d^*(\bigcup_{n=1}^m -n+A) = 1$} \,\}$.
+    \end{itemize}
+  \end{defn}
+
 
 \subsection{Algebraic Proof of Roth's Theorem}
 
