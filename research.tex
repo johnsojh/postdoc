@@ -17,6 +17,8 @@
 \theoremstyle{definition}
 \newtheorem{defn}[thm]{Definition}
 \newtheorem{rmk}[thm]{Remark}
+\newtheorem{ques}[thm]{Question}
+\newtheorem{prob}[thm]{Problem}
 
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\VDW}{\mathcal{VDW}}
@@ -28,43 +30,45 @@
 \section{Research Description}
 \subsection{Hindman's Theorem}
 Issai Schur, in \cite{Schur:1916fk}, proved one of the earliest
-results in Ramsey Theory. 
+results in Ramsey Theory.
 His theorem states that if the natural numbers are divided into
 finitely many classes, then there exists natural numbers $x$ and $y$
-such that $\{\, x, y, x+y \,\}$ is contained in one class.
-Many years later in \cite{Hindman:1974ys} Neil Hindman proved a
-strictly stronger generalization of Schur's Theorem \cite[Theorems
-16.28 and 16.29]{Hindman:1998fk} that cannot be generalized to an
-``uncountable index'' \cite{Milliken:1978fk}. 
-
+such that $\{\,x, y, x+y\,\}$ is contained in one class.
+Several decades later in \cite{Hindman:1974ys}, Neil Hindman proved a
+strong generalization of Schur's Theorem.
+(It's known that Hindman's Theorem is strictly stronger than Schur's
+Theorem \cite[Theorems 16.28 and 16.29]{Hindman:1998fk}; moreover,
+Hindman's Theorem can \textsl{not} be generalized to an uncountable
+``index'' \cite{Milliken:1978fk}.)
 \begin{fst}
-  For all natural numbers $r$, if \/ $\bbN = \bigcup_{i=1}^r C_i$, then
-  there exist $i \in \{1, 2, \ldots, r\}$ and a sequence $\la x_n
+  For all natural numbers $r$, if \/ $\bbN = \bigcup_{i=1}^r C_i$,
+  then there exist $i \in \{1, 2, \ldots, r\}$ and a sequence $\la x_n
   \ra_{n=1}^\infty$ in $\bbN$ such that
-    \[
-      \Bigl\{\, \sum_{n\in F} x_n : \emptyset \ne F \subseteq \bbN
-      \hbox{ is finite} \,\Bigr\} \subseteq C_i.
-    \]
+  \[
+    \biggl\{\, \sum_{n \in F} x_n : \hbox{$\emptyset \ne F \subseteq
+      \bbN$ is finite} \,\biggr\} \subseteq C_i.
+  \]
 \end{fst}
 
-The original proof of this theorem uses a complicated elementary
-combinatorial argument. 
+The original proof of this theorem uses a complicated combinatorial
+argument. 
 (However, Baumgartner gives a shorter and slightly easier
 combinatorial proof in \cite{Baumgartner:1974uq}.)
-Even before the first combinatorial proof was discovered, it was shown
+Even before the first combinatorial proof was discovered, it was known
 by Fred Galvin that an easy proof of Hindman's Theorem would follow
-from the existence of, the somewhat exotic object called, an idempotent
-ultrafilter. 
-A brief summary of the interesting history of Hindman's Theorem can be
-found in the notes section of \cite[Chapter 5]{Hindman:1998fk}. 
+from the existence of an object called an idempotent ultrafilter.
+Unfortunately lack of space prohibits us from expanding on the
+interesting history of Hindman's Theorem; but, the interested reader
+can find a brief summary in the notes section of \cite[Chapter
+5]{Hindman:1998fk}.
 
 This connection between Hindman's Theorem and idempotent ultrafilters
-was only the first of many connections between Ramsey Theory and
-ultrafilters.
-Moreover, despite over thirty years of study, there are still many
-attractive open questions about this connection.
+was one of the first of many interesting connections between Ramsey
+Theory and ultrafilters.
+Moreover, despite over thirty years of study there are still many
+attractive open questions surrounding this connection. 
 Before we can even state those particular questions that interest us,
-we pause to give a brief outline of the requisite results and
+we pause to give a brief outline of some basic results and
 definitions. 
 
 \subsection{Algebra in the Stone-\v{C}ech Compactification}
@@ -73,18 +77,18 @@ definitions.
   Let $\emptyset \ne p \subseteq \mathcal{P}(\bbN)$.
   We call $p$ an \textsl{ultrafilter on $\bbN$} if and only if it
   satisfies the following four properties:
-    \begin{itemize}
-      \item[(1)] $\emptyset \not\in p$.
-      \item[(2)] If $A$, $B \in p$, then $A \cap B \in p$.
-      \item[(3)] If $A \in p$ and $A \subseteq B \subseteq \bbN$,
-        then $B \in p$.
-      \item[(4)] Let $r \in \bbN$ and for each $i \in \{1, 2,
-        \ldots, r\}$ suppose we have $C_i \subseteq \bbN$. 
-        If $\bigcup_{i=1}^r C_i \in p$, then there exists $i \in
-        \{1, 2, \ldots, r\}$ such that $C_i \in p$.
-    \end{itemize}
+  \begin{itemize}
+    \item[(1)] $\emptyset \not\in p$.
+    \item[(2)] If $A$, $B \in p$, then $A \cap B \in p$.
+    \item[(3)] If $A \in p$ and $A \subseteq B \subseteq \bbN$,
+      then $B \in p$.
+    \item[(4)] Let $r \in \bbN$ and for each $i \in \{1, 2,
+      \ldots, r\}$ suppose we have $C_i \subseteq \bbN$. 
+      If $\bigcup_{i=1}^r C_i \in p$, then there exists $i \in
+      \{1, 2, \ldots, r\}$ such that $C_i \in p$.
+  \end{itemize}
 \end{defn}
-  
+
 It's easy to construct essentially trivial ultrafilters. 
 For all $a \in \bbN$ put $e(a) = \{\, A \subseteq \bbN : a \in A
 \,\}$.
@@ -96,10 +100,9 @@ Zorn's Lemma.
 
 Our next set of definitions will enable us to describe a topological
 and algebraic structure on the collection of all ultrafilters on $\bbN$.
-This will give the Stone-\v{C}ech compactification of $\beta\bbN$ the
+This will give the Stone-\v{C}ech compactification of $\bbN$ the
 structure of a compact Hausdorff right-topological semigroup. 
 (We will explain what ``right-topological'' means shortly.)
-
 \begin{defn}
   \label{defn:alg}
   \begin{itemize}
@@ -124,17 +127,15 @@ We identify $\bbN$ with the principal ultrafilters by the injective
 function $a \mapsto e(a)$. 
 Then with this topology $\beta\bbN$ is simply the Stone-\v{C}ech
 compactification of $\bbN$. 
-
 For all $p$, $q \in \beta\bbN$, the sum $p+q$ is an ultrafilter.
 Moreover, $(\beta\bbN, +)$ is a semigroup where the addition on
 $\beta\bbN$ is an extension of the usual addition on $\bbN$. 
 The details behind these algebraic assertions can be found in
 \cite[Chapter 4 Section 1]{Hindman:1998fk}.
-However it is somewhat disconcerting to learn that since $(\beta\bbN,
+(However it is somewhat disconcerting to learn that since $(\beta\bbN,
 +)$ contains a copy of the free group on $2^{2^{\aleph_0}}$ generators
 \cite[Corollary 7.36]{Hindman:1998fk}, $(\beta\bbN,+)$ is a ``highly''
-noncommutative semigroup.
-
+noncommutative semigroup.)
 
 We summarize our discussion by saying that $(\beta\bbN,
 +)$ is a compact Hausdorff right-topological semigroup. 
@@ -148,26 +149,26 @@ $2^{2^{\aleph_0}}$ idempotents \cite[Theorem 6.44]{Hindman:1998fk}.
 
 To demonstrate how all of this elaborate equipment can be put to use,
 we give an easy proof of Schur's Theorem using an idempotent.
-
 \begin{schur}
   For every natural number $r$, if  \/ $\bbN = \bigcup_{i=1}^r C_i$,
   then there exist $i \in \{1, 2, \ldots, r\}$ and natural numbers
   $x$ and $y$ such that $\{\, x, y, x+y \,\} \subseteq C_i$.
 \end{schur}
 \begin{proof}
-  Pick an idempotent ultrafilter $p + p = p \in \beta\bbN$. 
-  Since $\bbN \in p$, we can, by Definition \ref{defn:uf}(4),
-  pick $i \in \{1, 2, \ldots, r\}$ such that $C_i \in p
-  = p + p$. 
-  Then by Definition \ref{defn:alg}(d) we have that $\{\, x \in \bbN : -x
-  + C_i \in p \,\} \in p$.
-  Definition \ref{defn:uf}(2) shows us that $C_i \cap
-  \{\, x\in \bbN : -x + C_i \in p \,\} \in p$.
-  Pick $x \in C_i$ such that $-x+C_i \in p$.
-  Again, by Definition \ref{defn:uf}(2), $C_i \cap (-x+C_i) \in p$.
-  Pick $y \in C_i \cap (-x+C_i)$.
-  Then $\{\, x, y, x+y\,\} \subseteq C_i$.
+  Pick an idempotent $p$ in $\beta\bbN$.
+  Since $\bigcup_{i=1}^r C_i = \bbN \in p$, by Definition
+  \ref{defn:uf}(4) pick $i \in \{1, 2, \ldots, r\}$ such that $C_i \in
+  p$.
+  Now by Definition \ref{defn:alg}(d) we have that $\{\, x \in \bbN :
+  -x + C_i \in p \,\} \in p$; and, Definition \ref{defn:uf}(2) shows
+  that $C_i \cap \{\, x \in \bbN : -x + C_i \in p \,\} \in p$.
+  Hence we can pick $x \in C_i$ such that $-x + C_i \in p$. 
+  Applying Definition \ref{defn:uf}(2) again yields $C_i \cap (-x +
+  C_i) \in p$.
+  Finally, we can pick $y \in C_i \cap (-x+C_i)$.
+  Therefore we have $\{\, x, y, x+y \,\} \subseteq C_i$.
 \end{proof}
+
 It's possible to strengthen the conclusion of this theorem to show
 that the set $\bigl\{\, \{x, y\} \subseteq \bbN : \{x, y, x+y\}
 \subseteq C_i\,\bigr\}$ is infinite.
@@ -176,32 +177,112 @@ of nonprincipal ultrafilters are infinite, and idempotents in
 $\beta\bbN$ are necessarily nonprincipal.)
 Modifying the proof to produce Hindman's Theorem is mainly a matter of
 formulating the right inductive hypothesis.
-Details can be found in \cite[Theorem 5.8]{Hindman:1998fk}. 
+The interested reader can find the details in \cite[Theorem
+5.8]{Hindman:1998fk}. 
 
-While the fact that $(\beta\bbN, +)$ has many idempotents, each giving
-an easy proof of Hindman's Theorem, is interesting, there is another
-class of structures in $(\beta\bbN, +)$ that sheds an interesting
-light on Ramsey Theory. 
-
+Our final set of basic definitions we allow us to formulate another type
+of important algebraic structure in $(\beta\bbN, +)$. 
 \begin{defn}
   Given subsets $A$ and $B$ of $\beta\bbN$, we put $A + B = \{\, p+q :
   \hbox{$p \in A$ and $q \in B$} \,\}$.
   Let $\emptyset \ne I \subseteq \beta\bbN$.
-    \begin{itemize}
-      \item[(a)] $I$ is a \textsl{left ideal} if and only if
-        $\beta\bbN + I \subseteq I$.
-      \item[(b)] $I$ is a \textsl{right ideal} if and only if
-        $I+\beta\bbN \subseteq I$.
-      \item[(c)] $I$ is a \textsl{(two-sided) ideal} if and only if
-        $I$ is both a left and right ideal.
-    \end{itemize}
+  \begin{itemize}
+    \item[(a)] $I$ is a \textsl{left ideal} if and only if
+      $\beta\bbN + I \subseteq I$.
+    \item[(b)] $I$ is a \textsl{right ideal} if and only if
+      $I+\beta\bbN \subseteq I$.
+    \item[(c)] $I$ is a \textsl{(two-sided) ideal} if and only if
+      $I$ is both a left and right ideal.
+    \item[(d)] $\bbN^* = \{\, p \in \beta\bbN : \hbox{$p$ is
+        nonprincipal} \,\}$.
+    \item[(e)] We let $K(\beta\bbN)$ represent the smallest ideal of
+      $(\beta\bbN, +)$, that is, $K(\beta\bbN)$ is a two-sided ideal
+      and it is contained in every ideal of $(\beta\bbN, +)$.
+  \end{itemize}
 \end{defn}
 
-While idempotents are associated with Schur-type additive Ramsey
-Theory results, the left, right, and two-sided ideals are associated
-with another class of important Ramsey Theory results. 
-Before giving this connection we briefly turn our attention back to
-some combinatorial statements.
+By \cite[Theorem 4.36]{Hindman:1998fk}, it's known that $\bbN^*$ is a
+compact ideal; and by \cite[Theorem 4.36]{Hindman:1998fk}, it's known
+that the smallest ideal $K(\beta\bbN)$ exists. 
+(However, $K(\beta\bbN)$ is \textsl{not} closed. 
+This fact follows from \cite[Theorem 4.4]{Hindman:1996uq}.)
+The smallest ideal is one of the most well understood ideal in
+$(\beta\bbN, +)$.
+For instance, elements in $K(\beta\bbN)$ are, in a certain sense,
+``close'' to being idempotents ultrafilters. 
+(See for example \cite[Theorems 4.39 and 4.43]{Hindman:1998fk}.)
+We introduce the smallest ideal because many of our open questions are
+inspired by it's properties. 
+
+\subsection{Open Questions}
+While the smallest ideal has a central importance in $(\beta\bbN, +)$
+from a certain point of view $c\ell\bigl(K(\beta\bbN)\bigr)$ is more
+important than $K(\beta\bbN)$. 
+For instance, $c\ell\bigl(K(\beta\bbN)\bigr)$ is contained in every
+compact ideal of $(\beta\bbN, +)$. 
+For mathematical reasons, that we will expanded on shortly, we will
+let $\Delta_1$ denote $c\ell\bigl(K(\beta\bbN)\bigr)$. 
+Since $\bbN^*$ is an ideal, it's easy to see that $\Delta_1 +
+\bbN^*$ is also a right ideal.
+By \cite[Theorem 2.19(a)]{Hindman:1998fk}, we have that
+$c\ell\bigl(\Delta_1 + \bbN^*\bigr)$ is a two-sided ideal of
+$(\beta\bbN, +)$.
+An easy argument shows that $\Delta_1 = c\ell\bigl(\Delta_1 +
+\bbN^*\bigr)$. 
+This natural leads us to wonder which compact ideals of $(\beta\bbN,
++)$ have this ``fixed-point'' property?
+More precisely, we ask the following question.
+\begin{ques}
+  Does there exists a compact ideal $I$ of $(\beta\bbN, +)$ such that
+  $I \ne \Delta_1$ and $I = c\ell\bigl(I + \bbN^*)$? 
+\end{ques}
+
+Bartel Leendert van der Waerden, in \cite{Van-der-Waerden:1927fk},
+proved that if the natural numbers are divided into finitely many
+classes, then for every natural number $k$ at least one class contains
+a $k$-term arithmetic progression.
+Van der Waerden's proof was purely elementary, using only the
+pigeonhole principle and induction. 
+However, an easy proof using the algebraic structure of $\Delta_1$ is
+also known (see \cite[Theorem 14.1 and Corollary 14.2]{Hindman:1998fk}).
+Many decades later, Szemer\'{e}di proved a powerful generalization of van
+der Waerden's Theorem in \cite{Szemeredi:1975uq}.
+To state his theorem we define the \textsl{Banach density} of $A
+\subseteq \bbN$ by
+\begin{align*}
+  d^*(A) &= \sup\bigl\{\, \alpha \in [0,1] : \hbox{for all $k \in
+    \bbN$, there exist $n \ge k$ and $a \in \bbN$} \\
+  &\hspace{5em}\hbox{such that $|A \cap \{\,a, a+1, \ldots,
+    a+n-1\,\}| \ge \alpha\cdot n$} \,\bigr\}.
+\end{align*}
+\begin{sz}
+  If $A \subseteq \bbN$, $d^*(A) > 0$, and $k$ is a natural number,
+  then $A$ contains a $k$-term arithmetic progression. 
+\end{sz}
+
+Currently there is no known proof of Szemer\'{e}di's Theorem using the
+algebraic structure of $(\beta\bbN, +)$. 
+Such a proof, if it exists, would likely involve the need for more
+detailed understanding of the algebraic structure of compact ideals. 
+Therefore, an algebraic proof of Szemer\'{e}di's Theorem is likely to
+be a very difficult problem. 
+However, before Szemer\'{e}di proved his famous theorem, Roth in
+\cite{Roth:1953fk} proved that if $A \subseteq \bbN$ and $d^*(A) > 0$,
+then $A$ contains a 3-term arithmetic progression.
+Therefore we propose the following (hopefully simpler) problem.
+\begin{prob}
+  Produce an algebraic proof of Roth's Theorem. 
+  (By algebraic, we roughly mean a proof that mainly uses the
+  algebraic structure $(\beta\bbN, +)$. 
+\end{prob}
+
+Of course it is not obvious that such a proof, even in principle,
+exists.
+
+
+
+
+\subsection{Questions inspired by Arithmetic Progressions} 
 
 \subsection{Szemer\'{e}di's Theorem}
 Bartel Leendert van der Waerden, in \cite{Van-der-Waerden:1927fk},
@@ -210,7 +291,7 @@ classes, then for every natural number $k$ at least one class contains
 a $k$-term arithmetic progression. 
 For expository convenience we will call a subset of the natural
 numbers that contains a $k$-term arithmetic progression a
-\textsl{$k$AP-set}.
+\textsl{$AP_{k}$-set}.
 In fact, using van der Waerden's Theorem and the pigeonhole principle
 we can easily derive the superficially stronger statement that one
 class is a $k$AP-set for every natural number $k$.
@@ -248,12 +329,7 @@ of Szemer\'{e}di's Theorem.
 We choose to give this alternate form because their slight differences
 will produce interesting algebraic consequences latter.
 Define the \textsl{Banach density} of $A \subseteq \bbN$ by
-  \begin{align*}
-    d^*(A) &= \sup\bigl\{\, \alpha \in [0,1] : \hbox{for all $k \in
-      \bbN$, there exist $n \ge k$ and $a \in \bbN$} \\
-    &\hspace{5em}\hbox{such that $|A \cap \{\,a, a+1, \ldots,
-      a+n-1\,\}| \ge \alpha\cdot n$} \,\bigr\}.
-  \end{align*}
+  
   \begin{sz}[Alternate form]
     \label{sz:banach}
     If $A \subseteq \bbN$ and $d^*(A) > 0$, then $A$ is a $k$AP-set
