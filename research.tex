@@ -132,10 +132,6 @@ Moreover, $(\beta\bbN, +)$ is a semigroup where the addition on
 $\beta\bbN$ is an extension of the usual addition on $\bbN$. 
 The details behind these algebraic assertions can be found in
 \cite[Chapter 4 Section 1]{Hindman:1998fk}.
-(However it is somewhat disconcerting to learn that since $(\beta\bbN,
-+)$ contains a copy of the free group on $2^{2^{\aleph_0}}$ generators
-\cite[Corollary 7.36]{Hindman:1998fk}, $(\beta\bbN,+)$ is a ``highly''
-noncommutative semigroup.)
 
 We summarize our discussion by saying that $(\beta\bbN,
 +)$ is a compact Hausdorff right-topological semigroup. 
@@ -169,10 +165,14 @@ we give an easy proof of Schur's Theorem using an idempotent.
   Therefore we have $\{\, x, y, x+y \,\} \subseteq C_i$.
 \end{proof}
 
-It's possible to strengthen the conclusion of this theorem to show
-that the set $\bigl\{\, \{x, y\} \subseteq \bbN : \{x, y, x+y\}
-\subseteq C_i\,\bigr\}$ is infinite.
-(This particular result can be derived easily by knowing that members
+It's possible to strengthen the conclusion of this theorem in two
+ways.
+One strengthen is to show that the set $\bigl\{\,\{\, x, y \,\}
+\subseteq \bbN : \{\,x,y,x+y\,\} \subseteq C_i \,\bigr\}$ is infinite.
+Another strengthen is to show that there exists a sequence $\la x_n
+\ra_{n=1}^\infty$ in $C_i$ such that $\{\, x_m + x_n : m \ne n \,\}
+\subseteq C_i$.
+(Both of these results can be derived easily by knowing that members
 of nonprincipal ultrafilters are infinite, and idempotents in
 $\beta\bbN$ are necessarily nonprincipal.)
 Modifying the proof to produce Hindman's Theorem is mainly a matter of
@@ -185,14 +185,14 @@ of important algebraic structure in $(\beta\bbN, +)$.
 \begin{defn}
   Given subsets $A$ and $B$ of $\beta\bbN$, we put $A + B = \{\, p+q :
   \hbox{$p \in A$ and $q \in B$} \,\}$.
-  Let $\emptyset \ne I \subseteq \beta\bbN$.
+  Let $\emptyset \ne J \subseteq \beta\bbN$.
   \begin{itemize}
-    \item[(a)] $I$ is a \textsl{left ideal} if and only if
-      $\beta\bbN + I \subseteq I$.
-    \item[(b)] $I$ is a \textsl{right ideal} if and only if
-      $I+\beta\bbN \subseteq I$.
-    \item[(c)] $I$ is a \textsl{(two-sided) ideal} if and only if
-      $I$ is both a left and right ideal.
+    \item[(a)] $J$ is a \textsl{left ideal} if and only if
+      $\beta\bbN + J \subseteq J$.
+    \item[(b)] $J$ is a \textsl{right ideal} if and only if
+      $J+\beta\bbN \subseteq J$.
+    \item[(c)] $J$ is a \textsl{(two-sided) ideal} if and only if
+      $J$ is both a left and right ideal.
     \item[(d)] $\bbN^* = \{\, p \in \beta\bbN : \hbox{$p$ is
         nonprincipal} \,\}$.
     \item[(e)] We let $K(\beta\bbN)$ represent the smallest ideal of
@@ -208,34 +208,87 @@ that the smallest ideal $K(\beta\bbN)$ exists.
 This fact follows from \cite[Theorem 4.4]{Hindman:1996uq}.)
 The smallest ideal is one of the most well understood ideal in
 $(\beta\bbN, +)$.
-For instance, elements in $K(\beta\bbN)$ are, in a certain sense,
+For instance, elements in $K(\beta\bbN)$ are, in several ways,
 ``close'' to being idempotents ultrafilters. 
 (See for example \cite[Theorems 4.39 and 4.43]{Hindman:1998fk}.)
 We introduce the smallest ideal because many of our open questions are
 inspired by it's properties. 
 
-\subsection{Open Questions}
-While the smallest ideal has a central importance in $(\beta\bbN, +)$
-from a certain point of view $c\ell\bigl(K(\beta\bbN)\bigr)$ is more
-important than $K(\beta\bbN)$. 
-For instance, $c\ell\bigl(K(\beta\bbN)\bigr)$ is contained in every
-compact ideal of $(\beta\bbN, +)$. 
-For mathematical reasons, that we will expanded on shortly, we will
-let $\Delta_1$ denote $c\ell\bigl(K(\beta\bbN)\bigr)$. 
-Since $\bbN^*$ is an ideal, it's easy to see that $\Delta_1 +
-\bbN^*$ is also a right ideal.
-By \cite[Theorem 2.19(a)]{Hindman:1998fk}, we have that
-$c\ell\bigl(\Delta_1 + \bbN^*\bigr)$ is a two-sided ideal of
-$(\beta\bbN, +)$.
-An easy argument shows that $\Delta_1 = c\ell\bigl(\Delta_1 +
-\bbN^*\bigr)$. 
-This natural leads us to wonder which compact ideals of $(\beta\bbN,
-+)$ have this ``fixed-point'' property?
+\subsection{Open Questions and Problems}
+While the smallest ideal has a central importance in $(\beta\bbN, +)$,
+it is also the case that $c\ell\bigl(K(\beta\bbN)\bigr)$ is an
+important compact ideal of $\beta\bbN$.
+(For instance, $c\ell\bigl(K(\beta\bbN)\bigr)$ is contained in every
+compact ideal of $(\beta\bbN, +)$.)
+Hence, many of our questions and problems are motivated by results
+about $c\ell\bigl(K(\beta\bbN)\bigr)$.
+
+Let $\Delta_1$ denote $c\ell\bigl(K(\beta\bbN)\bigr)$.
+Since $\bbN^*$ is an ideal, a simple check proves that $\Delta_1 +
+\bbN^*$ is a right ideal.
+From \cite[Theorem 2.19(a)]{Hindman:1998fk}, we have that
+$c\ell(\Delta_1 + \bbN^*)$ is a compact ideal.
+An easy argument, using the fact that $\Delta_1$ is the smallest
+compact ideal, shows that $\Delta_1 = c\ell(\Delta_1+\bbN^*)$.
+It is natural to ask whether $\Delta_1$ is the only compact
+ideal with this ``fixed-point'' property.
 More precisely, we ask the following question.
 \begin{ques}
-  Does there exists a compact ideal $I$ of $(\beta\bbN, +)$ such that
-  $I \ne \Delta_1$ and $I = c\ell\bigl(I + \bbN^*)$? 
+  Does there exists a compact ideal $J$ such that $J \ne \Delta_1$ and
+  $J = c\ell(J+\bbN^*)$?
 \end{ques}
+In \cite{Davenport:1987uq}, Davenport and Hindman were able to show
+the more precise result that $\Delta_1 = c\ell(p+\bbN^*)$ if and only
+if $p \in \Delta_1$.
+This particular result naturally leads to the following question.
+\begin{ques}
+  Does there exists a compact ideal $J$ such that $J \ne \Delta_1$ and
+  $J = c\ell(p + \bbN^*)$ if and only if $p \in J$?
+\end{ques}
+
+Davenport and Hindman called $c\ell(p+\bbN^*)$, for $p \in \beta\bbN$,
+a \textsl{subprincipal (closed) ideal}.
+To state one of the open questions in \cite{Davenport:1987uq} we make
+the following list of definitions.
+\begin{defn}
+  Let $A \subseteq \bbN$.
+  \begin{itemize}
+    \item[(a)] The \textsl{upper density} of $A$ is 
+      \[
+        \overline{d}(A) = \limsup_{N\to\infty} \frac{|A \cap \{1, 2,
+          \ldots, N\}|}{N}.
+      \]
+    \item[(b)] The \textsl{Banach density} of $A$ is 
+      \begin{align*}
+        d^*(A) &= \sup\bigl\{\, \alpha \in [0,1] : \hbox{for all $k \in
+          \bbN$, there exist $n \ge k$ and $a \in \bbN$} \\
+        &\hspace{5em}\hbox{such that $|A \cap \{\,a, a+1, \ldots,
+          a+n-1\,\}| \ge \alpha\cdot n$} \,\bigr\}.
+      \end{align*}
+
+    \item[(c)] $\Delta = \{\, p \in \beta\bbN : \hbox{$\overline{d}(A)
+        > 0$ for all $A \in p$} \,\}$.
+
+    \item[(d)] $\Delta^* = \{\, p \in \beta\bbN : \hbox{$d^*(A) > 0$
+        for all $A \in p$} \,\}$.
+  \end{itemize}
+\end{defn}
+It's an exercise to see that $\overline{d}(A) \le d^*(A)$.
+(Moreover, $A = \bigcup_{n=1}^\infty \{\,2^n, 2^n +1, \ldots, 2^n+n
+\,\}$ shows that this inequality can become a strict inequality.)
+It's known that $\Delta$ is a compact left ideal \cite[Theorem
+6.79]{Hindman:1998fk} and $\Delta^*$ is a compact ideal \cite[Theorem
+20.5]{Hindman:1998fk}.
+By our inequality $\overline{d}(A) \le d^*(A)$, it follows that
+$\Delta \subseteq \Delta^*$.
+We now present the open question in \cite{Davenport:1987uq}.
+\begin{ques}
+  Is $\Delta^*$ a subprincipal ideal?
+\end{ques}
+\begin{rmk}
+  By way of contrast, in \cite[Lemma 3.4]{Hindman:1988kx}, Hindman
+  proved that $\Delta^* = c\ell(\Delta + \bbN^*)$.  
+\end{rmk}
 
 Bartel Leendert van der Waerden, in \cite{Van-der-Waerden:1927fk},
 proved that if the natural numbers are divided into finitely many
@@ -247,198 +300,90 @@ However, an easy proof using the algebraic structure of $\Delta_1$ is
 also known (see \cite[Theorem 14.1 and Corollary 14.2]{Hindman:1998fk}).
 Many decades later, Szemer\'{e}di proved a powerful generalization of van
 der Waerden's Theorem in \cite{Szemeredi:1975uq}.
-To state his theorem we define the \textsl{Banach density} of $A
-\subseteq \bbN$ by
-\begin{align*}
-  d^*(A) &= \sup\bigl\{\, \alpha \in [0,1] : \hbox{for all $k \in
-    \bbN$, there exist $n \ge k$ and $a \in \bbN$} \\
-  &\hspace{5em}\hbox{such that $|A \cap \{\,a, a+1, \ldots,
-    a+n-1\,\}| \ge \alpha\cdot n$} \,\bigr\}.
-\end{align*}
-\begin{sz}
-  If $A \subseteq \bbN$, $d^*(A) > 0$, and $k$ is a natural number,
-  then $A$ contains a $k$-term arithmetic progression. 
-\end{sz}
+Szemer\'{e}di proved that if $d^*(A) > 0$ and $k$ is a natural number,
+then $A$ contains a $k$-term arithmetic progression.
 
-Currently there is no known proof of Szemer\'{e}di's Theorem using the
-algebraic structure of $(\beta\bbN, +)$. 
-Such a proof, if it exists, would likely involve the need for more
-detailed understanding of the algebraic structure of compact ideals. 
-Therefore, an algebraic proof of Szemer\'{e}di's Theorem is likely to
-be a very difficult problem. 
-However, before Szemer\'{e}di proved his famous theorem, Roth in
-\cite{Roth:1953fk} proved that if $A \subseteq \bbN$ and $d^*(A) > 0$,
-then $A$ contains a 3-term arithmetic progression.
+While Szemer\'{e}di's Theorem has been different proofs, there is
+currently no known proof that uses the algebraic structure of
+$(\beta\bbN,+)$. 
+Of course it is not obvious that such a proof, even in principle,
+exists.
+Moreover, it is difficult to imagine how such a proof could exist
+without a more detailed understanding of the algebraic structure of
+compact ideals. 
+Hence an algebraic proof of Szemer\'{e}di's Theorem is likely to be a
+very difficult problem. 
+
+However, a couple of decades before Szemer\'{e}di proved his famous
+theorem, Roth in \cite{Roth:1953fk} proved that if $d^*(A) > 0$, then
+$A$ contains a 3-term arithmetic progression. 
+The proof of Roth's Theorem is known to be simpler than
+Szemer\'{e}di's Theorem. 
 Therefore we propose the following (hopefully simpler) problem.
 \begin{prob}
-  Produce an algebraic proof of Roth's Theorem. 
-  (By algebraic, we roughly mean a proof that mainly uses the
-  algebraic structure $(\beta\bbN, +)$. 
+  Produce an algebraic proof of Roth's Theorem.
+  By algebraic, we roughly mean a proof that mainly uses the
+  algebraic structure of $(\beta\bbN, +)$. 
 \end{prob}
 
-Of course it is not obvious that such a proof, even in principle,
-exists.
-
-
-
-
-\subsection{Questions inspired by Arithmetic Progressions} 
-
-\subsection{Szemer\'{e}di's Theorem}
-Bartel Leendert van der Waerden, in \cite{Van-der-Waerden:1927fk},
-proved that if the natural numbers are divided into finitely many
-classes, then for every natural number $k$ at least one class contains
-a $k$-term arithmetic progression. 
-For expository convenience we will call a subset of the natural
-numbers that contains a $k$-term arithmetic progression a
-\textsl{$AP_{k}$-set}.
-In fact, using van der Waerden's Theorem and the pigeonhole principle
-we can easily derive the superficially stronger statement that one
-class is a $k$AP-set for every natural number $k$.
-Almost a decade after van der Waerden published his proof, Erd\H{o}s
-and Tur\'{a}n stated a conjecture in \cite{Erdos:1936fk} about a
-generalization of van der Waerden's Theorem that continues to be the
-source of vibrant research.
-
-To state their conjecture we define the \textsl{upper (asymptotic)
-  density} of $A \subseteq \bbN$ by 
-  \[
-    \overline{d}(A) = \limsup_{N\to\infty} \frac{|A \cap \{1, 2,
-      \ldots, N\}|}{N}.
-  \]
-  \begin{sz}[Erd\H{o}s-Tur\'{a}n Conjecture]
-    \label{sz:upperdensity}
-    If $A \subseteq \bbN$ and $\overline{d}(A) > 0$, then $A$ is a
-    $k$AP-set for every $k \in \bbN$.
-  \end{sz}
-
-The Erd\H{o}s-Tur\'{a}n Conjecture turned out to be both correct and a
-hard problem; it was proved almost forty years later by Szemer\'{e}di in
-\cite{Szemeredi:1975uq}. 
-(If a set with positive upper density is divided into finitely many
-classes, then at least one class has positive upper density.
-Combining this fact with Szemer\'{e}di's Theorem gives us van der
-Waerden's Theorem.)
-Szemer\'{e}di's proof of his theorem uses an elementary, but
-complicated, combinatorial argument. 
-Shortly after this original proof, Furstenburg produced another proof
-in \cite{Furstenberg:1977fk} that used Ergodic Theory. 
-
-Furstenburg, for technical reasons, proved a slightly different form
-of Szemer\'{e}di's Theorem. 
-We choose to give this alternate form because their slight differences
-will produce interesting algebraic consequences latter.
-Define the \textsl{Banach density} of $A \subseteq \bbN$ by
-  
-  \begin{sz}[Alternate form]
-    \label{sz:banach}
-    If $A \subseteq \bbN$ and $d^*(A) > 0$, then $A$ is a $k$AP-set
-    for every $k \in \bbN$.
-  \end{sz}
-It's a straightforward exercise to show that if $\overline{d}(A) > 0$,
-then $d^*(A) > 0$.
-Therefore given Theorem \ref{sz:banach} we can derive Theorem
-\ref{sz:upperdensity}.
-The fact that Theorem \ref{sz:upperdensity} can be derive Theorem
-\ref{sz:banach} was proved by Hindman in \cite[Theorem
-2.1]{Hindman:1982fk}.
-Hence we are justified in calling both versions Szemer\'{e}di's
-Theorem. 
-
-After these two initial proofs, a number of different types of proofs
-have been discovered. 
-The two latest proofs have been produced by Ben Green and Terence Tao
-in \cite{Green:2010uq} and the (online) polymath group in
-\cite{Polymath:2010kx}. 
-However, despite the great variety of proofs produced so far, their is
-currently no known ``algebraic proof'' of Szemer\'{e}di's Theorem.
-By an algebraic proof I mean a proof that uses nothing but the
-algebraic structure of $(\beta\bbN, +)$. 
-
-Of course it is not obvious that such a proof, even in principle,
-exists.
-But, in the next section we give two pieces of evidence that an
-algebraic proof may exist. 
-
-\subsection{Known Algebraic Information on  Szemer\'{e}di's Theorem}
-
-  \begin{defn}
-    \begin{itemize}
-      \item[(a)] $\mathcal{AP} = \{\, p \in \beta\bbN : \hbox{for all
-          $A \in p$ $A$ contains a $k$-term arithmetic progression
-          for every $k \in \bbN$} \,\}$.
-      \item[(b)] $\Delta = \{\, p \in \beta\bbN : \hbox{for all $A \in
-          p$, $\overline{d}(A) > 0$} \,\}$.
-      \item[(c)] $\Delta^* = \{\, p \in \beta\bbN : \hbox{for all $A
-          \in p$, $d^*(A) > 0$} \,\}$.
-      \item[(d)] $\Delta_1 = \{\, p \in \beta\bbN : \hbox{for all $A
-            \in p$, there exists $m \in \bbN$ such that
-            $d^*(\bigcup_{n=1}^m -n+A) = 1$} \,\}$.
-    \end{itemize}
-  \end{defn}
-
-
-\subsection{Algebraic Proof of Roth's Theorem}
-
-  \begin{defn}
-    For all $A \subseteq \bbN$, define the \textsl{upper asymptotic
-      density} of $A$ by 
+To state our next question, we make the following definition. 
+\begin{defn}
+  \begin{itemize}
+    \item[(a)] Let $A \subseteq \bbN$. 
+      We say $A$ is a $J$-set if and only if for every nonempty finite
+      collection $F$ of sequences in $\bbN$, there exist $a \in \bbN$
+      and a finite nonempty subset $H \subseteq \bbN$ such that for
+      all $f \in F$,
       \[
-        \overline{d}(A) = \limsup_{N\to\infty} \frac{A \cap \{1, 2,
-          \ldots, N\}}{N}.
+        a + \sum_{t \in H} f(t) \in A.
       \]
-  \end{defn}
+    \item[(b)] $J(\bbN) = \{\, p \in \beta\bbN : \hbox{$A$ is a
+        $J$-set for all $A \in p$} \,\}$.
+  \end{itemize}
+\end{defn}
+\begin{rmk}
+  It's known that if $d^*(A) > 0$, then $A$ is a $J$-set \cite[Theorem
+  6.10]{Hindman:2009vn}, and moreover that there exists a $J$-set $B$
+  with $d^*(B) = 0$ \cite[Theorem 2.1]{Hindman:2009ys}.
+  Hence $\Delta^* \subsetneq J(\bbN)$.   
+\end{rmk}
 
-Erd\H{o}s and Turan conjectured that if $\overline{d}(A) > 0$, then
-$A$ contains a $k$-term arithmetic progression for every natural
-number $k$.
-Their conjecture turned out to be correct and was proved almost forty
-years later by Szemer\'{e}di in \cite{Szemeredi:1975uq}. 
-To state Szemer\'{e}di's Theorem in algebraic language we introduce
-the following two definitions.
-  \begin{defn}
-    \begin{itemize}
-      \item[(a)] $\Delta = \{\, p \in \beta\bbN : \overline{d}(A) > 0
-        \hbox{ for all } A \in p \,\}$.
-      \item[(b)] $\mathcal{AP} = \{\, p \in \in \beta\bbN : \hbox{for
-          all $A \in p$ } A \hbox{ contains a $k$-term arithmetic
-          progression for every $k \in \bbN$} \,\}$.
-    \end{itemize}
-  \end{defn}
+In \cite[Theorem 3.8]{Hindman:1982zr}, Hindman proved the following
+theorem.
+\begin{thm}
+  \begin{align*}
+    \Delta_1 &= \{\, p \in \beta\bbN: \hbox{for all $A \in p$, there
+      exists $k \in \bbN$} \\
+      &\hspace{5em}\hbox{such that $d^*\bigl(\bigcup_{i=1}^k
+        -i+A\bigr) = 1$} \,\}.
+  \end{align*}
+\end{thm}
+Since we know that there exists $J$-sets with zero Banach density, we
+ask the following question.
+\begin{ques}
+  Does there exists a function $\delta \colon \mathcal{P}(\bbN) \to
+  [0, \infty)$ with the following properties? 
+  \begin{itemize}
+    \item[(1)] For all $A \subseteq \bbN$, $\delta(A) \ge d^*(A)$.
+    \item[(2)] If $A \subseteq \bbN$ is a $J$-set, then $\delta(A) >
+      0$.
+    \item[(3)] If $\delta(A \cup B) > 0$, then either $\delta(A) >0$
+      or $\delta(B) > 0$.
+    \item[(4)] The set
+      \[
+        \{\, p \in \beta\bbN: \hbox{for all $A \in p$, there
+          exists $k \in \bbN$} 
+        \hbox{ such that $\delta\bigl(\bigcup_{i=1}^k
+          -i+A\bigr) = 1$} \,\}.
+      \]
+      is an ideal. 
+  \end{itemize}
+\end{ques}
+\begin{rmk}
+  Initiatively this question asks if there is a certain type of
+  density on $\bbN$ for which $J$-sets are have positive density.
+\end{rmk}
 
-Two important results in Ramsey Theory are Szem\'{e}rdi's Theorem and
-Roth's Theorem. 
-To state these theorems we introduce the familiar notion of \textsl{upper
-asymptotic density}
-  \begin{defn}
-    Given $A \subseteq \bbN$, define $\overline{d}(A) = \limsup_{N \to
-      \infty} (A \cap \{1, 2, \ldots, N\})/ N$.
-  \end{defn}
-Szem\'{e}rdi's Theorem states that if $\overline{d}(A) > 0$, then $A$
-contains arbitrarily long arithmetic progressions. 
-This particular theorem is hard to prove and has a long history. 
-Van der Waerden proved $\la\hbox{blah}\ra$, then Erd\H{o}s and Turan
-was interested in which ``size'' of guarantees the conclusion to van
-der Waerden's Theorem, they correctly conjectured that if
-$\overline{d}(A) >0$, then $A$ contains arbitrarily long arithmetic
-progressions. 
-The proof of this conjecture was not immediate put proceeded in
-steps. 
-The first big step was provided by Roth in \cite{Roth:1953fk}. 
-In this paper he proved the following $\la\hbox{Roth's Theorem}\ra$.
-Next Szem\'{e}rdi gave a combinatorial proof of $\la\hbox{Roth's
-  Theorem}\ra$ and extended it to a 4-term arithmetic progression. 
-Finally Szem\'{e}rdi was able to prove the full case in
-\textsc{SzPaper}. 
-Soon after another proof of Szem\'{e}rd's Theorem was provided by
-Fursternburg in \textsc{ERTpaper} that used Ergodic Theory. 
-Since then several more proofs of Szem\'{e}di's Theorem have appeared
-\textsc{cite all of the various version included DHJ}. 
-It's an empirical fact that most Ramsey Theory statements are either
-about idempotents or ideals.
-For instance, van \dots
-
-
-\bibliographystyle{plain}
+\bibliographystyle{amsplain}
 \bibliography{references}
 \end{document}
