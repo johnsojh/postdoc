@@ -25,8 +25,39 @@
 \newcommand{\la}{\langle}
 \newcommand{\ra}{\rangle}
 
+\title{Research Statement}
+\author{John H.~Johnson}
 
 \begin{document}
+\maketitle
+\tableofcontents
+\section{Research Summary}
+I'm interested in Ramsey Theory, Topological Algebra, and the
+interplay between these two fields.
+In Ramsey Theory, there are many statements inspired by Hindman's
+Theorem and van der Waerden's Theorem.
+Giving $\beta\bbN$ the structure of a compact Hausdorff
+right-topological semigroup where the usual addition on $\bbN$ extends
+to $\beta\bbN$, we have that Hindman-type theorems correspond to
+idempotent elements of $\beta\bbN$, while van der Waerden-type
+theorems correspond to compact ideals.
+With this correspondence, combinatorial results produce interesting
+algebraic consequences.
+Conversely, knowledge on about the algebra of $\beta\bbN$ often yields
+relatively easy proofs of combinatorial results. 
+
+I am also interested in mathematical outreach and increasing the
+interest and participation of minority students in the mathematical
+sciences. 
+I was able to gain experience in both of these aspects during my two
+year tenure as a GK-12 Fellow.
+Since this experience was very valuable, for both me and the students,
+I would like to setup such a program at $\la\hbox{place}\ra$.
+In addition, I would also like to setup a partnership between Howard
+University and $\la\hbox{place}\ra$ such that graduate students in
+their late stages can come to $\la\hbox{place}\ra$ to gain teaching
+experience, network, and write (and present) their dissertation. 
+
 \section{Research Description}
 \subsection{Hindman's Theorem}
 Issai Schur, in \cite{Schur:1916fk}, proved one of the earliest
@@ -206,23 +237,22 @@ compact ideal; and by \cite[Theorem 4.36]{Hindman:1998fk}, it's known
 that the smallest ideal $K(\beta\bbN)$ exists. 
 (However, $K(\beta\bbN)$ is \textsl{not} closed. 
 This fact follows from \cite[Theorem 4.4]{Hindman:1996uq}.)
-The smallest ideal is one of the most well understood ideal in
-$(\beta\bbN, +)$.
+The smallest ideal is one of the most well understood and studied
+ideal in $(\beta\bbN, +)$.
 For instance, elements in $K(\beta\bbN)$ are, in several ways,
 ``close'' to being idempotents ultrafilters. 
 (See for example \cite[Theorems 4.39 and 4.43]{Hindman:1998fk}.)
-We introduce the smallest ideal because many of our open questions are
-inspired by it's properties. 
-
-\subsection{Open Questions and Problems}
 While the smallest ideal has a central importance in $(\beta\bbN, +)$,
 it is also the case that $c\ell\bigl(K(\beta\bbN)\bigr)$ is an
-important compact ideal of $\beta\bbN$.
-(For instance, $c\ell\bigl(K(\beta\bbN)\bigr)$ is contained in every
-compact ideal of $(\beta\bbN, +)$.)
+important compact ideal of $\beta\bbN$. 
+For instance, $c\ell\bigl(K(\beta\bbN)\bigr)$ is contained in every
+compact ideal of $(\beta\bbN, +)$, many theorems true for
+$K(\beta\bbN)$ are also true for $c\ell\bigl(K(\beta\bbN)\bigr)$ (with
+a ``few'' modifications). 
 Hence, many of our questions and problems are motivated by results
 about $c\ell\bigl(K(\beta\bbN)\bigr)$.
 
+\subsection{Open Questions and Problems}
 Let $\Delta_1$ denote $c\ell\bigl(K(\beta\bbN)\bigr)$.
 Since $\bbN^*$ is an ideal, a simple check proves that $\Delta_1 +
 \bbN^*$ is a right ideal.
@@ -237,9 +267,9 @@ More precisely, we ask the following question.
   Does there exists a compact ideal $J$ such that $J \ne \Delta_1$ and
   $J = c\ell(J+\bbN^*)$?
 \end{ques}
-In \cite{Davenport:1987uq}, Davenport and Hindman were able to show
-the more precise result that $\Delta_1 = c\ell(p+\bbN^*)$ if and only
-if $p \in \Delta_1$.
+In \cite[Lemma 3.3]{Davenport:1987uq}, Davenport and Hindman were able
+to show the more precise result that $\Delta_1 = c\ell(p+\bbN^*)$ if
+and only if $p \in \Delta_1$.
 This particular result naturally leads to the following question.
 \begin{ques}
   Does there exists a compact ideal $J$ such that $J \ne \Delta_1$ and
@@ -248,8 +278,8 @@ This particular result naturally leads to the following question.
 
 Davenport and Hindman called $c\ell(p+\bbN^*)$, for $p \in \beta\bbN$,
 a \textsl{subprincipal (closed) ideal}.
-To state one of the open questions in \cite{Davenport:1987uq} we make
-the following list of definitions.
+To state one of the open questions in \cite{Davenport:1987uq} relating
+to subprincipal ideals we make the following list of definitions.
 \begin{defn}
   Let $A \subseteq \bbN$.
   \begin{itemize}
@@ -285,9 +315,20 @@ We now present the open question in \cite{Davenport:1987uq}.
 \begin{ques}
   Is $\Delta^*$ a subprincipal ideal?
 \end{ques}
+
+By way of contrast to this question, in \cite[Lemma
+3.4]{Hindman:1988kx}, Hindman proved that $\Delta^* = c\ell(\Delta +
+\bbN^*)$.  
+And, so this result leads us to our next question.
+\begin{ques}
+  Does there exist a compact ideal $J$ with a compact left ideal $L
+  \subsetneq J$ such that $J \ne \Delta^*$, $J \ne \Delta_1$, and $J =
+  c\ell(L + \bbN^*)$?
+\end{ques}
 \begin{rmk}
-  By way of contrast, in \cite[Lemma 3.4]{Hindman:1988kx}, Hindman
-  proved that $\Delta^* = c\ell(\Delta + \bbN^*)$.  
+  We have to exclude the ideal $\Delta_1$ too, since it is known that
+  we can pick a compact left ideal $L \subsetneq \Delta_1$ such that
+  $\Delta_1 = c\ell(L + \bbN^*)$.
 \end{rmk}
 
 Bartel Leendert van der Waerden, in \cite{Van-der-Waerden:1927fk},
@@ -311,22 +352,72 @@ exists.
 Moreover, it is difficult to imagine how such a proof could exist
 without a more detailed understanding of the algebraic structure of
 compact ideals. 
-Hence an algebraic proof of Szemer\'{e}di's Theorem is likely to be a
+Accordingly, the above questions are meant to improve this understanding.
+But, even if all of these questions can be answered it is likely that
+an algebraic proof of Szemer\'{e}di's Theorem is likely to be a
 very difficult problem. 
 
 However, a couple of decades before Szemer\'{e}di proved his famous
 theorem, Roth in \cite{Roth:1953fk} proved that if $d^*(A) > 0$, then
 $A$ contains a 3-term arithmetic progression. 
-The proof of Roth's Theorem is known to be simpler than
-Szemer\'{e}di's Theorem. 
+The proof of Roth's Theorem is known to be (by technical
+considerations) simpler to prove than Szemer\'{e}di's Theorem. 
+While I'm doubtful that answers to the above questions will lead to an
+algebraic proof of Szemer\'{e}di's Theorem, I am more optimistic that
+answers to the above questions can lead to an algebraic proof of
+Roth's Theorem.
 Therefore we propose the following (hopefully simpler) problem.
 \begin{prob}
   Produce an algebraic proof of Roth's Theorem.
   By algebraic, we roughly mean a proof that mainly uses the
   algebraic structure of $(\beta\bbN, +)$. 
 \end{prob}
+\begin{rmk}
+  One possible idea to prove Szemer\'{e}di's Theorem algebraically is
+  contained in \cite{Davenport:1987uq}.  
+  In \cite[Theorem 3.8]{Hindman:1982zr}, Hindman proved that 
+  \begin{align*}
+    \Delta_1 &= \{\, p \in \beta\bbN: \hbox{for all $A \in p$, there
+      exists $k \in \bbN$} \\
+      &\hspace{5em}\hbox{such that $d^*\bigl(\bigcup_{i=1}^k
+        -i+A\bigr) = 1$} \,\}.
+  \end{align*}
+  Also, in \cite[Theorem 3.8]{Hindman:1982fk}, he proved that for
+  every $\varepsilon >0$, if $d^*(A) > 0$, then there exists a natural
+  number $k$ such that $d^*\bigl(\bigcup_{i=1}^k -i+A \bigr) \ge 1 -
+  \varepsilon$. 
+  Hence, in a certain sense, $\Delta^*$ is ``close'' to the ideal
+  $\Delta_1$. 
+  It was conjectured by Davenport and Hindman that this ``closeness''
+  would imply that $\Delta^*$ is contained in every compact ideal of
+  $(\beta\bbN, +)$. 
+  If this conjecture were true, it would imply Szemer\'{e}di's
+  Theorem. 
+  
+  Unfortunately, this promising conjecture turned out to be
+  false. 
+  The paper \cite{Davenport:1987uq} produces several compact ideals
+  that do not contain $\Delta^*$. 
+  Another interesting result contained in this paper is that
+  $\Delta^*\setminus\Delta_1$ intersects every compact ideal of
+  $(\beta\bbN, +)$.
 
-To state our next question, we make the following definition. 
+  It may be possible to modify this conjecture for Roth's Theorem as
+  follows. 
+  It's known that $\bbN^* = \{\, p \in \beta\bbN : \hbox{$A$ contains
+    a 2-term arithmetic progression for all $A \in p$} \,\}$ and that
+  $\mathcal{AP}_3 = \{\, p \in \beta\bbN : \hbox{$A$ contains a }
+  \hbox{3-term arithmetic progression for all $A \in p$} \,\}$ is a
+  compact ideal.
+  Hence if $\mathcal{AP}_3$ is ``close'' enough to $\bbN^*$, it may be
+  possible to prove algebraically that $\Delta^* \subseteq
+  \mathcal{AP}_3$. 
+  This last inclusion is equivalent to Roth's Theorem.
+\end{rmk}
+
+
+
+To state our next and final question, we make the following definition. 
 \begin{defn}
   \begin{itemize}
     \item[(a)] Let $A \subseteq \bbN$. 
@@ -341,35 +432,26 @@ To state our next question, we make the following definition.
         $J$-set for all $A \in p$} \,\}$.
   \end{itemize}
 \end{defn}
-\begin{rmk}
-  It's known that if $d^*(A) > 0$, then $A$ is a $J$-set \cite[Theorem
-  6.10]{Hindman:2009vn}, and moreover that there exists a $J$-set $B$
-  with $d^*(B) = 0$ \cite[Theorem 2.1]{Hindman:2009ys}.
-  Hence $\Delta^* \subsetneq J(\bbN)$.   
-\end{rmk}
 
-In \cite[Theorem 3.8]{Hindman:1982zr}, Hindman proved the following
-theorem.
-\begin{thm}
-  \begin{align*}
-    \Delta_1 &= \{\, p \in \beta\bbN: \hbox{for all $A \in p$, there
-      exists $k \in \bbN$} \\
-      &\hspace{5em}\hbox{such that $d^*\bigl(\bigcup_{i=1}^k
-        -i+A\bigr) = 1$} \,\}.
-  \end{align*}
-\end{thm}
-Since we know that there exists $J$-sets with zero Banach density, we
-ask the following question.
+It's known that if $d^*(A) > 0$, then $A$ is a $J$-set \cite[Theorem
+6.10]{Hindman:2009vn}.
+Hence $\Delta^* \subsetneq J(\bbN)$.   
+It's also known that there exists a $J$-set $B$
+with $d^*(B) = 0$ \cite[Theorem 2.1]{Hindman:2009ys}.
+Since we know that there exists $J$-sets with zero Banach density, our
+next question asks if there is a notion of density such that $J$-sets
+have positive density.
 \begin{ques}
   Does there exists a function $\delta \colon \mathcal{P}(\bbN) \to
   [0, \infty)$ with the following properties? 
   \begin{itemize}
     \item[(1)] For all $A \subseteq \bbN$, $\delta(A) \ge d^*(A)$.
-    \item[(2)] If $A \subseteq \bbN$ is a $J$-set, then $\delta(A) >
+    \item[(2)] For all $t \in \bbN$, $\delta(A) = \delta(-t+A)$.
+    \item[(3)] If $A \subseteq \bbN$ is a $J$-set, then $\delta(A) >
       0$.
-    \item[(3)] If $\delta(A \cup B) > 0$, then either $\delta(A) >0$
+    \item[(4)] If $\delta(A \cup B) > 0$, then either $\delta(A) >0$
       or $\delta(B) > 0$.
-    \item[(4)] The set
+    \item[(5)] The set
       \[
         \{\, p \in \beta\bbN: \hbox{for all $A \in p$, there
           exists $k \in \bbN$} 
@@ -379,11 +461,52 @@ ask the following question.
       is an ideal. 
   \end{itemize}
 \end{ques}
-\begin{rmk}
-  Initiatively this question asks if there is a certain type of
-  density on $\bbN$ for which $J$-sets are have positive density.
-\end{rmk}
+
+\section{Broader Impact}
+\subsection{GK-12 Program}
+For two years at Howard University I was a GK-12 Graduate Student
+Fellow. 
+The purpose of the GK-12 program was to increase the interests of
+minority students' interest in science, technology, engineering, and
+mathematics fields by pairing a class of students with a graduate
+student. 
+When I participated in the program, I was paired with a high school
+teacher and two of his classes. 
+Each week I would prepare a mathematical activity for the students and
+go into the classroom to run the activity.
+
+Overall the students enjoyed the activities, I learned quite a bit
+about how to communicate difficult mathematical ideas to an audience
+with varying abilities and interest. 
+Moreover, I also think that the activities help to expand the
+students' view of the great variety and applicability of mathematics. 
+
+I propose to continue this program at $\la\hbox{place}\ra$.
+My first year, I will make contact with a local high school so I can
+come in weekly to a particular class for the school year and run
+various mathematical activities. 
+For the second and third year, I will apply for a grant so that a
+couple of graduate students can also participate by developing
+activities and running them in the classroom. 
+Also during this two years, we will be sitting up a website and
+possible recording the activities and putting the video on YouTube and
+the PDF of the activity on the website.
+
+\subsection{Preparing Future Faculty}
+Currently, I'm participating in the Preparing Future Faculty
+internship program at James Madison University. 
+This particular program is a partnership between Howard University and
+James Madison University (as well as other universities) where
+graduate students that are in the late stages of their program can go
+to a host institution  for a year to gain teaching experience and
+write up their dissertation. 
+
+I propose to create a partnership between Howard University and
+$\la\hbox{place}\ra$ so that we can exchange graduate
+students to teach. 
+
 
 \bibliographystyle{amsplain}
+\addcontentsline{toc}{section}{References}
 \bibliography{references}
 \end{document}

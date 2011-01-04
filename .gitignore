@@ -3,6 +3,7 @@
 *.log
 *.synctex.gz
 *.out
+*.toc
 
 # Ignore the files produced by BiBTeX
 *.bbl
